@@ -13,7 +13,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
 
-    --primary: 213 96% 18%;
+    --primary: 354 70% 34%;  /* Bain's deep red */
     --primary-foreground: 0 0% 100%;
 
     --secondary: 220 14% 96%;
@@ -22,7 +22,7 @@
     --muted: 220 14% 96%;
     --muted-foreground: 220 9% 46%;
 
-    --accent: 213 96% 18%;
+    --accent: 354 70% 54%;  /* Brighter red for accents */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -30,7 +30,7 @@
 
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 213 96% 18%;
+    --ring: 354 70% 34%;
 
     --radius: 0.5rem;
   }
@@ -70,14 +70,29 @@
   }
 }
 
-.gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-accent to-primary;
-}
+@layer utilities {
+  .animate-marquee {
+    animation: marquee 40s linear infinite;
+  }
 
-.animated-gradient {
-  background: linear-gradient(-45deg, hsl(var(--primary)), hsl(var(--accent)));
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#8E1F2C] to-[#C41230];
+  }
+
+  .animated-gradient {
+    background: linear-gradient(-45deg, hsl(354 70% 34%), hsl(354 70% 54%));
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
 }
 
 @keyframes gradient {
@@ -99,19 +114,4 @@
 .blur-backdrop {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-}
-
-@layer utilities {
-  .animate-marquee {
-    animation: marquee 40s linear infinite;
-  }
-
-  @keyframes marquee {
-    0% {
-      transform: translateX(0%);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
 }

@@ -7,6 +7,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 
+
 const fontSans = IBM_Plex_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -21,9 +22,9 @@ const fontHeading = IBM_Plex_Sans({
 })
 
 export const metadata: Metadata = {
-  title: "Ayah Consulting | Multisectoral Insight. Global Execution.",
+  title: "Baswara Consulting | Strategic Excellence. Global Impact.",
   description:
-    "Ayah Consulting brings 24+ years of experience across global industry and national health reform into integrated, actionable strategy.",
+    "Baswara Consulting delivers transformative strategies and actionable insights across industries, driving sustainable growth and operational excellence.",
   generator: 'v0.dev'
 }
 
@@ -35,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={cn("min-h-screen bg-background font-sans antialiased", fontSans.variable, fontHeading.variable)}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange>
           <div className="relative flex min-h-screen flex-col">
             <Navbar />
             <main className="flex-1">{children}</main>
