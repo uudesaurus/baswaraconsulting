@@ -38,8 +38,8 @@ export default function Navbar() {
     >
       <div className="container flex items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
-          <span className="font-heading text-2xl font-bold gradient-text">AYAH</span>
-          <span className="text-sm font-medium text-muted-foreground">CONSULTING</span>
+          <span className="font-large text-lg font-bold gradient-text">BASWARA</span>
+          <span className="text-lg font-large text-muted-foreground">CONSULTING</span>
         </Link>
 
         {/* Desktop Navigation */}
