@@ -92,7 +92,6 @@ export default function ApproachSection() {
                     </div>
                   </div>
                 </div>
-
                 <div className={cn("hidden md:block", index % 2 === 0 ? "order-0" : "")} />
               </div>
             ))}

@@ -62,7 +62,7 @@ export default function HeroSection() {
           </h1>
 
           <p className="text-xl text-muted-foreground animate-fade-up [animation-delay:400ms] opacity-0">
-            Ayah Consulting brings 24+ years of experience across global industry and national health reform into
+            Baswara Consulting brings 24+ years of experience across global industry and national health reform into
             integrated, actionable strategy.
           </p>
 
