@@ -1,20 +1,67 @@
 import { MetadataRoute } from 'next'
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://baswaraconsulting.com'
   
-  const routes = [
-    '',
-    '/services',
-    '/case-studies',
-    '/about',
-    '/contact',
-  ].map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date().toISOString(),
-    changeFrequency: route === '' ? 'weekly' : 'monthly' as 'weekly' | 'monthly',
-    priority: route === '' ? 1 : 0.8,
+  // Core pages with static routes
+  const staticRoutes = [
+    {
+      url: baseUrl,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 1
+    },
+    {
+      url: `${baseUrl}/services`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.9
+    },
+    {
+      url: `${baseUrl}/case-studies`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.8
+    },
+    {
+      url: `${baseUrl}/about`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7
+    },
+    {
+      url: `${baseUrl}/contact`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.6
+    }
+  ]
+
+  // Add service pages
+  const servicePages = [
+    'corporate-strategy',
+    'operational-excellence',
+    'digital-transformation',
+    'market-entry',
+    'sustainability'
+  ].map(service => ({
+    url: `${baseUrl}/services/${service}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.8
   }))
 
-  return routes
+  // Add case study pages
+  const caseStudyPages = [
+    'world-bank-project',
+    'undp-transformation',
+    'corporate-excellence'
+  ].map(study => ({
+    url: `${baseUrl}/case-studies/${study}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7
+  }))
+
+  return [...staticRoutes, ...servicePages, ...caseStudyPages]
 } 

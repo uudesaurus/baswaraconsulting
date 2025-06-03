@@ -2,10 +2,34 @@
 User-agent: *
 Allow: /
 
+# Optimize crawl rate
+Crawl-delay: 1
+
 # Sitemap location
 Sitemap: https://baswaraconsulting.com/sitemap.xml
 
-# Prevent crawling of admin or sensitive areas
+# Prevent crawling of non-public areas
 Disallow: /api/
 Disallow: /admin/
-Disallow: /private/ 
+Disallow: /private/
+Disallow: /*?type=*
+Disallow: /*?ref=*
+
+# Allow important resources
+Allow: /*.js$
+Allow: /*.css$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /fonts/
+Allow: /icons/
+
+# Block specific crawlers from heavy resources
+User-agent: GPTBot
+Disallow: /images/
+Disallow: /downloads/
+
+User-agent: ChatGPT-User
+Disallow: /images/
+Disallow: /downloads/ 
