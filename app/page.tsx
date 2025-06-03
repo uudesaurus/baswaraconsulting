@@ -17,7 +17,7 @@ export default function Home() {
       <StatsSection />
       <AboutSection />
       <CaseStudiesSection />
-      <ApproachSection />
+      {/* <ApproachSection /> */}
       <InsightsSection />
       <CTASection />
     </div>

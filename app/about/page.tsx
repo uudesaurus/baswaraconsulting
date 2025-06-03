@@ -10,7 +10,7 @@ export default function AboutPage() {
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="mb-6">
-              About <span className="gradient-text">Ayah Consulting</span>
+              About <span className="gradient-text">Baswara</span>
             </h1>
             <p className="text-xl text-muted-foreground">
               Bridging practice and strategy across sectors to deliver measurable transformation.
@@ -25,7 +25,7 @@ export default function AboutPage() {
             <div>
               <div className="relative h-[600px] rounded-lg overflow-hidden">
                 <Image
-                  src="/placeholder.svg?height=1200&width=800"
+                  src="/images/arief.png?height=1200&width=800"
                   alt="Arief Sudrajat, Founder of Ayah Consulting"
                   fill
                   className="object-cover"

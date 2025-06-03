@@ -2,14 +2,14 @@ import React from 'react';
 
 const clients = [
   "World Bank",
-  "USAID",
+  "Chemonics",
   "UNDP",
   "Panasonic",
   "Sumitomo",
   "Atlas Copco",
   // Duplicate for continuous effect
   "World Bank",
-  "USAID",
+  "Chemonics",
   "UNDP",
   "Panasonic",
   "Sumitomo",

@@ -41,22 +41,23 @@ export default function AboutSection() {
           <div ref={imageRef} className="relative transition-all duration-1000 opacity-0 -translate-x-12">
             <div className="relative h-[500px] rounded-lg overflow-hidden">
               <Image
-                src="/placeholder.svg?height=1000&width=800"
+                src="/images/arief.png"
                 alt="Arief Sudrajat, Founder of Ayah Consulting"
                 fill
                 className="object-cover"
+                priority
               />
             </div>
             <div className="absolute -bottom-6 -right-6 bg-background p-6 rounded-lg border border-border shadow-lg">
               <p className="text-sm text-muted-foreground mb-2">Founder</p>
               <h4 className="text-xl font-medium">Arief Sudrajat</h4>
-              <p className="text-accent text-sm">24+ Years Experience</p>
+              <p className="text-accent text-sm">26+ Years Experience</p>
             </div>
           </div>
 
           <div ref={contentRef} className="transition-all duration-1000 opacity-0 translate-x-12">
             <h2 className="mb-6">
-              About <span className="gradient-text">Ayah Consulting</span>
+              About <span className="gradient-text">Baswara Consulting</span>
             </h2>
             <p className="text-muted-foreground mb-6">
               From executional roles in the private sector (Panasonic, Sumitomo, Atlas Copco) to senior consulting

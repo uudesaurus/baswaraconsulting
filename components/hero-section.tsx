@@ -68,14 +68,14 @@ export default function HeroSection() {
 
           <div className="flex flex-wrap justify-center gap-4 pt-4 animate-fade-up [animation-delay:500ms] opacity-0">
             <Button size="lg" asChild>
-              <Link href="/credentials">
-                Explore Our Work
+              <Link href="/about">
+                Know More
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
             <Button size="lg" variant="outline" asChild>
               <Link href="#">
-                Download Profile
+                Download Company Profile
                 <Download className="ml-2 h-4 w-4" />
               </Link>
             </Button>

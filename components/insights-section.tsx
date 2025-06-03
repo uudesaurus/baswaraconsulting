@@ -5,26 +5,15 @@ import Link from "next/link"
 
 const insights = [
   {
-    title: "Future of Diagnostics in Southeast Asia",
-    excerpt: "An analysis of emerging trends and technologies shaping the diagnostic landscape in Southeast Asia.",
+    id: 1,
+    title: "Building an Agile Supply Chain for Public Health Commodities in Indonesia",
+    date: "March 2024",
+    category: "Healthcare & Supply Chain",
+    excerpt: "Managing essential public health commodities such as AIDS, TB and Malaria (ATM) commodities involves navigating a complex ecosystem of logistical, institutional, and governance-related barriers.",
+    slug: "agile-supply-chain-indonesia",
     image: "/placeholder.svg?height=400&width=600",
-    category: "Research",
-    date: "May 2025",
-  },
-  {
-    title: "Health Supply Chain Trends Post-COVID",
-    excerpt: "Examining the lasting impact of the pandemic on health supply chains and strategies for resilience.",
-    image: "/placeholder.svg?height=400&width=600",
-    category: "Analysis",
-    date: "April 2025",
-  },
-  {
-    title: "Role of Digital Integration in Public Procurement",
-    excerpt: "How digital tools are transforming public procurement processes and improving transparency.",
-    image: "/placeholder.svg?height=400&width=600",
-    category: "Whitepaper",
-    date: "March 2025",
-  },
+    readTime: "15 min read",
+  }
 ]
 
 export default function InsightsSection() {
@@ -33,7 +22,7 @@ export default function InsightsSection() {
       <div className="container">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16">
           <div>
-            <h2 className="mb-4">Thought Leadership</h2>
+            <h2 className="text-3xl font-bold mb-4">Thought Leadership</h2>
             <p className="text-xl text-muted-foreground max-w-2xl">
               Explore our latest research, analysis, and insights on industry trends and best practices.
             </p>
@@ -46,12 +35,12 @@ export default function InsightsSection() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {insights.map((insight, index) => (
-            <div key={index} className="group">
-              <Link href={`/insights/${insight.title.toLowerCase().replace(/\s+/g, "-")}`} className="block">
+          {insights.map((insight) => (
+            <div key={insight.id} className="group">
+              <Link href={`/insights/${insight.slug}`} className="block">
                 <div className="relative h-60 mb-6 overflow-hidden rounded-lg">
                   <Image
-                    src={insight.image || "/placeholder.svg"}
+                    src={insight.image}
                     alt={insight.title}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"

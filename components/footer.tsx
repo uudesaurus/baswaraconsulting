@@ -9,18 +9,18 @@ export default function Footer() {
       <div className="container grid gap-8 md:grid-cols-2 lg:grid-cols-4">
         <div className="space-y-4">
           <div className="flex items-center space-x-2">
-            <span className="font-heading text-2xl font-bold gradient-text">AYAH</span>
+            <span className="font-heading text-2xl font-bold gradient-text">BASWARA</span>
             <span className="text-sm font-medium text-muted-foreground">CONSULTING</span>
           </div>
           <p className="text-muted-foreground text-sm">Multisectoral Insight. Global Execution.</p>
           <div className="flex space-x-4">
             <Button variant="ghost" size="icon" asChild>
-              <Link href="https://linkedin.com" aria-label="LinkedIn">
+              <Link href="https://www.linkedin.com/company/baswaraconsulting/posts/?feedView=all" aria-label="LinkedIn">
                 <Linkedin className="h-5 w-5" />
               </Link>
             </Button>
             <Button variant="ghost" size="icon" asChild>
-              <Link href="mailto:contact@ayahconsulting.com" aria-label="Email">
+              <Link href="mailto:hello@baswaraconsulting.com" aria-label="Email">
                 <Mail className="h-5 w-5" />
               </Link>
             </Button>
@@ -64,7 +64,7 @@ export default function Footer() {
             <p>Jakarta, Indonesia</p>
             <p className="mt-2">
               <a href="mailto:contact@ayahconsulting.com" className="hover:text-foreground transition-colors">
-                contact@ayahconsulting.com
+                hello@baswaraconsulting.com
               </a>
             </p>
           </address>
