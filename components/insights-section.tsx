@@ -11,7 +11,7 @@ const insights = [
     category: "Healthcare & Supply Chain",
     excerpt: "Managing essential public health commodities such as AIDS, TB and Malaria (ATM) commodities involves navigating a complex ecosystem of logistical, institutional, and governance-related barriers.",
     slug: "agile-supply-chain-indonesia",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/images/insight.png",
     readTime: "15 min read",
   }
 ]

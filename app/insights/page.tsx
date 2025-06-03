@@ -18,11 +18,11 @@ const insights = [
   {
     id: 1,
     title: "Building an Agile Supply Chain for Public Health Commodities in Indonesia",
-    date: "March 2024",
+    date: "May 2025",
     category: "Healthcare & Supply Chain",
     excerpt: "Managing essential public health commodities such as AIDS, TB and Malaria (ATM) commodities involves navigating a complex ecosystem of logistical, institutional, and governance-related barriers.",
     slug: "agile-supply-chain-indonesia",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/images/insight.png",
     readTime: "15 min read",
   }
 ]

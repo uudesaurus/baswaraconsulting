@@ -29,22 +29,11 @@ export default function ContactPage() {
                     <MapPin className="h-6 w-6 text-primary shrink-0" />
                     <div>
                       <h3 className="font-medium mb-2">Jakarta Office</h3>
-                      <p className="text-muted-foreground">
+                      {/* <p className="text-muted-foreground">
                         Ciputra World 2 Jakarta<br />
                         12th Floor<br />
                         Jakarta 12930
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <MapPin className="h-6 w-6 text-primary shrink-0" />
-                    <div>
-                      <h3 className="font-medium mb-2">Surabaya Office</h3>
-                      <p className="text-muted-foreground">
-                        Praxis<br />
-                        2nd Floor<br />
-                        Surabaya 60271
-                      </p>
+                      </p> */}
                     </div>
                   </div>
                 </div>
@@ -62,8 +51,8 @@ export default function ContactPage() {
                   </div>
                   <div className="flex items-center gap-4">
                     <Phone className="h-6 w-6 text-primary" />
-                    <a href="tel:+622125246970" className="text-muted-foreground hover:text-primary transition-colors">
-                      +62 21 2524 6970
+                    <a href="tel:+6281341146287" className="text-muted-foreground hover:text-primary transition-colors">
+                      +62 813 4114 6287
                     </a>
                   </div>
                 </div>

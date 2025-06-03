@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils"
 import { ThemeProvider } from "@/components/theme-provider"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
+import CTASection from "@/components/cta-section"
 
 
 const fontSans = IBM_Plex_Sans({
@@ -43,6 +44,7 @@ export default function RootLayout({
           <div className="relative flex min-h-screen flex-col">
             <Navbar />
             <main className="flex-1">{children}</main>
+            <CTASection />
             <Footer />
           </div>
         </ThemeProvider>

@@ -15,7 +15,7 @@ const services = [
       {
         id: "corporate-strategy",
         icon: <Building2 className="h-10 w-10" />,
-        title: "1. Corporate Strategy & Transformation",
+        title: "Corporate Strategy & Transformation",
         description: "We help organizations define their long-term strategic direction, translate it into actionable initiatives, and position themselves for sustainable growth in an evolving business landscape.",
         items: [
           {
@@ -35,7 +35,7 @@ const services = [
       {
         id: "model-innovation",
         icon: <FileText className="h-10 w-10" />,
-        title: "2. Model Innovation & Institutional Planning",
+        title: "Model Innovation & Institutional Planning",
         description: "We support companies in redesigning business models to align with market shifts, technological advancements, and regulatory frameworks, while also structuring long-term corporate plans in compliance with government standards.",
         items: [
           {
@@ -51,7 +51,7 @@ const services = [
       {
         id: "feasibility-studies",
         icon: <BarChart3 className="h-10 w-10" />,
-        title: "3. Feasibility & Investment Studies",
+        title: "Feasibility & Investment Studies",
         description: "We conduct in-depth feasibility studies that assess market potential, financial viability, and operational requirements. Our studies provide clear, data-driven insights that enable confident decision-making, reducing risk while maximizing growth opportunities.",
         items: [
           {
@@ -78,7 +78,7 @@ const services = [
       {
         id: "supply-chain-strategy",
         icon: <Truck className="h-10 w-10" />,
-        title: "4. Supply Chain Strategy & Execution",
+        title: "Supply Chain Strategy & Execution",
         description: "We design and implement comprehensive supply chain solutions—from diagnostics to end-to-end redesign—focused on improving visibility, responsiveness, and efficiency across procurement, distribution, and inventory systems.",
         items: [
           {
@@ -98,7 +98,7 @@ const services = [
       {
         id: "risk-management",
         icon: <Activity className="h-10 w-10" />,
-        title: "5. Risk Management & Business Continuity",
+        title: "Risk Management & Business Continuity",
         description: "We identify and assess potential supply chain disruptions, develop proactive mitigation strategies, and build continuity plans that safeguard operational resilience in dynamic and high-risk environments.",
         items: [
           {
@@ -118,7 +118,7 @@ const services = [
       {
         id: "process-reengineering",
         icon: <Users2 className="h-10 w-10" />,
-        title: "6. SOP & Process Reengineering",
+        title: "SOP & Process Reengineering",
         description: "We optimize business processes by mapping value chains, redesigning workflows with Lean principles, and institutionalizing SOPs with strong role clarity, systems integration, and performance monitoring tools.",
         items: [
           {
@@ -145,7 +145,7 @@ const services = [
       {
         id: "program-support",
         icon: <Globe2 className="h-10 w-10" />,
-        title: "7. Government & Donor-Funded Program Support",
+        title: "Government & Donor-Funded Program Support",
         description: "We collaborate with international organizations to localize program designs, manage field-level implementation, and generate high-impact results through tailored, context-sensitive interventions in Indonesia.",
         items: [
           {
@@ -165,7 +165,7 @@ const services = [
       {
         id: "regulatory-advisory",
         icon: <FileText className="h-10 w-10" />,
-        title: "8. Regulatory & Institutional Advisory",
+        title: "Regulatory & Institutional Advisory",
         description: "We provide strategic advisory on policy reforms, institutional effectiveness, and multi-stakeholder coordination, enabling clients to implement change within complex political and administrative systems.",
         items: [
           {
@@ -188,7 +188,7 @@ const services = [
       {
         id: "digital-strategy",
         icon: <Laptop className="h-10 w-10" />,
-        title: "9. Digital Strategy for Operations",
+        title: "Digital Strategy for Operations",
         description: "We guide organizations in crafting and executing digital transformation strategies that enhance operational performance, integrating suitable technologies and managing the human side of digital change.",
         items: [
           {
@@ -208,7 +208,7 @@ const services = [
       {
         id: "data-driven",
         icon: <BarChart3 className="h-10 w-10" />,
-        title: "10. Data-Driven Decision Making",
+        title: "Data-Driven Decision Making",
         description: "We empower clients to leverage data as a strategic asset by building robust dashboards, improving data governance, and exploring advanced analytics for predictive insights and better decision-making.",
         items: [
           {
@@ -229,7 +229,11 @@ const services = [
   }
 ]
 
-export default function ServicesSection() {
+interface ServicesSectionProps {
+  onServiceClick?: (service: string, item: string) => void;
+}
+
+export default function ServicesSection({ onServiceClick }: ServicesSectionProps) {
   const [activeService, setActiveService] = useState("strategic-advisory")
 
   return (
@@ -281,24 +285,18 @@ export default function ServicesSection() {
                     <div className="text-accent">{category.icon}</div>
                     <h3 className="text-xl font-medium">{category.title}</h3>
                     <p className="text-muted-foreground text-sm">{category.description}</p>
-                    <ul className="space-y-4">
-                      {category.items.map((item, index) => (
-                        <li key={index} className="space-y-2">
-                          <Link
-                            href={`/contact?category=${encodeURIComponent(category.title)}&service=${encodeURIComponent(item.name)}&message=${encodeURIComponent(item.description)}`}
-                            className="flex items-start gap-2 group"
-                          >
-                            <div className="mt-2 h-1.5 w-1.5 rounded-full bg-accent shrink-0" />
-                            <div>
-                              <span className="font-medium text-foreground group-hover:text-accent transition-colors">
-                                {item.name}
-                              </span>
-                              <p className="text-sm text-muted-foreground mt-1">{item.description}</p>
-                            </div>
-                          </Link>
-                        </li>
+                    <div className="space-y-4">
+                      {category.items.map((item) => (
+                        <button
+                          key={item.name}
+                          onClick={() => onServiceClick?.(service.title, item.name)}
+                          className="block w-full text-left p-4 rounded-lg border bg-background/50 hover:bg-background hover:border-primary/50 transition-colors"
+                        >
+                          <h4 className="font-medium mb-1">{item.name}</h4>
+                          <p className="text-sm text-muted-foreground">{item.description}</p>
+                        </button>
                       ))}
-                    </ul>
+                    </div>
                   </div>
                 ))}
               </div>

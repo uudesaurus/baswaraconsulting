@@ -12,7 +12,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 
 const services = [
   {
-    category: "1. Corporate Strategy & Transformation",
+    category: "Corporate Strategy & Transformation",
     items: [
       "Business Strategy Formulation",
       "Transformation Roadmap Development",
@@ -20,14 +20,14 @@ const services = [
     ]
   },
   {
-    category: "2. Model Innovation & Institutional Planning",
+    category: "Model Innovation & Institutional Planning",
     items: [
       "Business Model Reinvention",
       "Corporate Long-Term Planning (RJPP)"
     ]
   },
   {
-    category: "3. Feasibility & Investment Studies",
+    category: "Feasibility & Investment Studies",
     items: [
       "Market Entry & Opportunity Assessment",
       "Financial Modeling & Investment Case",
@@ -35,7 +35,7 @@ const services = [
     ]
   },
   {
-    category: "4. Supply Chain Strategy & Execution",
+    category: "Supply Chain Strategy & Execution",
     items: [
       "Supply Chain Diagnostic & Maturity Assessment",
       "End-to-End Supply Chain Design",
@@ -43,7 +43,7 @@ const services = [
     ]
   },
   {
-    category: "5. Risk Management & Business Continuity",
+    category: "Risk Management & Business Continuity",
     items: [
       "Supply Risk Mapping & Response Strategy",
       "BCP & Emergency Logistics Simulation",
@@ -51,7 +51,7 @@ const services = [
     ]
   },
   {
-    category: "6. SOP & Process Reengineering",
+    category: "SOP & Process Reengineering",
     items: [
       "Business Process Mapping & Optimization",
       "SOP Development & Deployment",
@@ -59,7 +59,7 @@ const services = [
     ]
   },
   {
-    category: "7. Government & Donor-Funded Program Support",
+    category: "Government & Donor-Funded Program Support",
     items: [
       "Program Design for Donor-Driven Initiatives",
       "Local Implementation Partnership",
@@ -67,14 +67,14 @@ const services = [
     ]
   },
   {
-    category: "8. Regulatory & Institutional Advisory",
+    category: "Regulatory & Institutional Advisory",
     items: [
       "Policy Review & Institutional Analysis",
       "Stakeholder Mapping & Engagement Strategy"
     ]
   },
   {
-    category: "9. Digital Strategy for Operations",
+    category: "Digital Strategy for Operations",
     items: [
       "Digital Transformation Blueprint",
       "Technology Vendor Selection & Integration",
@@ -82,7 +82,7 @@ const services = [
     ]
   },
   {
-    category: "10. Data-Driven Decision Making",
+    category: "Data-Driven Decision Making",
     items: [
       "Dashboarding & Analytics",
       "Data Governance & Quality Strategy",

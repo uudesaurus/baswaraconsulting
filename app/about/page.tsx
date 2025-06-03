@@ -36,18 +36,18 @@ export default function AboutPage() {
             <div>
               <h2 className="mb-6">Founder's Story</h2>
               <p className="text-muted-foreground mb-6">
-                Arief Sudrajat's journey spans over two decades across both private and public sectors, giving him a
+                Arief Sudrajat's journey spans almost three decades across both private and public sectors, giving him a
                 unique perspective on how to bridge operational excellence with strategic vision.
               </p>
 
               <p className="text-muted-foreground mb-6">
                 From executional roles in the private sector at Panasonic, Sumitomo, and Atlas Copco to senior
-                consulting projects in the public sector with the World Bank, USAID, UNDP, and CHAI, Arief combines
+                consulting projects in the public sector with the World Bank, Chemonics, UNDP, and CHAI, Arief combines
                 ground-level implementation expertise with national policy design experience.
               </p>
 
               <p className="text-muted-foreground mb-6">
-                This multisectoral background has shaped Ayah Consulting's philosophy of delivering advisory services
+                This multisectoral background has shaped Baswara Consulting's philosophy of delivering advisory services
                 that are rooted in execution, strategies built on evidence, and solutions co-created with clients.
               </p>
 

@@ -60,9 +60,10 @@ export default function AboutSection() {
               About <span className="gradient-text">Baswara Consulting</span>
             </h2>
             <p className="text-muted-foreground mb-6">
-              From executional roles in the private sector (Panasonic, Sumitomo, Atlas Copco) to senior consulting
-              projects in the public sector (World Bank, USAID, UNDP, CHAI), our founder combines ground-level
-              implementation with national policy design.
+            At Baswara Consulting, we bring together hands-on execution and high-level strategic advisory. Our founder’s experience spans both the private and public sectors — from operational roles at Panasonic, Sumitomo, and Atlas Copco, to consulting engagements with institutions such as the World Bank, UNDP, CHEMONICS, and CHAI. This dual perspective allows us to translate policy into actionable transformation and ground strategy in the realities of implementation.
+            <br/>
+            <br/>
+            We operate at the intersection of systems thinking, adaptive design, and contextual intelligence — helping clients solve complex challenges across supply chains, operations, digital transformation, and institutional strategy.
             </p>
 
             <div className="space-y-6 mb-8">

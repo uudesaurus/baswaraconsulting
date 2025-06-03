@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react"
 import { cn } from "@/lib/utils"
 
 const stats = [
-  { value: 24, label: "Years Experience", suffix: "+" },
+  { value: 26, label: "Years Experience", suffix: "+" },
   { value: 10, label: "Countries", suffix: "+" },
   { value: 100, label: "Stakeholders Served", suffix: "+" },
   { value: 40, label: "Projects Completed", suffix: "+" },

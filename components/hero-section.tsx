@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Download } from "lucide-react"
 import Link from "next/link"
-import { ClientMarquee } from "@/components/client-marquee"
+import ClientMarquee from "@/components/client-marquee"
 
 export default function HeroSection() {
   const heroRef = useRef<HTMLDivElement>(null)
@@ -62,17 +62,11 @@ export default function HeroSection() {
           </h1>
 
           <p className="text-xl text-muted-foreground animate-fade-up [animation-delay:400ms] opacity-0">
-            Baswara Consulting brings 24+ years of experience across global industry and national health reform into
+            Baswara Consulting brings 26+ years of experience across global industry and national health reform into
             integrated, actionable strategy.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 pt-4 animate-fade-up [animation-delay:500ms] opacity-0">
-            <Button size="lg" asChild>
-              <Link href="/about">
-                Know More
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
             <Button size="lg" variant="outline" asChild>
               <Link href="#">
                 Download Company Profile

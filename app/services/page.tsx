@@ -1,5 +1,8 @@
+"use client"
+
 import { Activity, Truck, Building2, LineChart } from "lucide-react"
 import ServicesSection from "@/components/services-section"
+import Link from "next/link"
 
 const services = [
   {
@@ -85,12 +88,20 @@ const services = [
 ]
 
 export default function ServicesPage() {
+  const handleServiceClick = (service: string, item: string) => {
+    const params = new URLSearchParams({
+      category: service,
+      service: item
+    })
+    window.location.href = `/contact?${params.toString()}`
+  }
+
   return (
     <div className="container py-12">
       <h1 className="text-4xl font-heading font-bold text-center mb-12">
         Our Services
       </h1>
-      <ServicesSection />
+      <ServicesSection onServiceClick={handleServiceClick} />
     </div>
   )
 }
