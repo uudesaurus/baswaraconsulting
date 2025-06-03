@@ -23,10 +23,68 @@ const fontHeading = IBM_Plex_Sans({
 })
 
 export const metadata: Metadata = {
-  title: "Baswara Consulting | Strategic Excellence. Global Impact.",
-  description:
-    "Baswara Consulting delivers transformative strategies and actionable insights across industries, driving sustainable growth and operational excellence.",
-  generator: 'v0.dev'
+  metadataBase: new URL('https://baswaraconsulting.com'),
+  title: {
+    default: "Baswara Consulting | Strategic Excellence. Global Impact.",
+    template: "%s | Baswara Consulting"
+  },
+  description: "Baswara Consulting delivers transformative strategies and actionable insights across industries, driving sustainable growth and operational excellence.",
+  keywords: [
+    "consulting",
+    "strategic consulting",
+    "business strategy",
+    "operational excellence",
+    "global consulting",
+    "industry transformation",
+    "corporate strategy",
+    "business consulting",
+    "management consulting",
+    "strategic planning"
+  ],
+  authors: [{ name: "Baswara Consulting" }],
+  creator: "Baswara Consulting",
+  publisher: "Baswara Consulting",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://baswaraconsulting.com',
+    siteName: 'Baswara Consulting',
+    title: 'Baswara Consulting | Strategic Excellence. Global Impact.',
+    description: 'Transform your business with data-driven strategies and proven methodologies. Global expertise in corporate strategy and operational excellence.',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Baswara Consulting',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Baswara Consulting | Strategic Excellence. Global Impact.',
+    description: 'Transform your business with data-driven strategies and proven methodologies. Global expertise in corporate strategy and operational excellence.',
+    images: ['/twitter-image.jpg'],
+    creator: '@baswaraconsult',
+  },
+  verification: {
+    google: 'your-google-verification-code',
+    // Add other verification codes as needed
+  },
+  alternates: {
+    canonical: 'https://baswaraconsulting.com',
+  },
 }
 
 export default function RootLayout({
