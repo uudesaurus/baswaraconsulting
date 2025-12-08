@@ -1,0 +1,99 @@
+{
+  "capabilities": [
+    {
+      "name": "Strategy & Transformation",
+      "headline": "Defining the path to sustainable growth.",
+      "hook": "Volatility is the new normal. We partner with clients to seize disruption, turning ambition into execution.",
+      "serviceSuite": [
+        "Corporate Strategy: Defining \"North Star\" & Portfolio Review (Stars vs. Dogs).",
+        "Business Unit Strategy: Turnaround plans & value prop redesign.",
+        "Transformation Office (TMO): Governance, value tracking (EBITDA), & Change Engines.",
+        "Digital Strategy: Business-IT alignment & Maturity assessment."
+      ]
+    },
+    {
+      "name": "Operations & Supply Chain",
+      "headline": "Unlocking step-change efficiency.",
+      "hook": "Operations is a strategic differentiator. We build 'smart' operations that are leaner, faster, and resilient.",
+      "serviceSuite": [
+        "Manufacturing Excellence: Lean/Six Sigma, OEE Optimization, Predictive Maintenance.",
+        "Supply Chain Resilience: Network Design (Hub & Spoke), Inventory Optimization.",
+        "Procurement: Strategic Sourcing & Spend Analysis.",
+        "Capital Projects: Stage-Gate Reviews, Contractor Mgmt, Digital Twins."
+      ]
+    },
+    {
+      "name": "Digital & Technology",
+      "headline": "Harnessing the power of data.",
+      "hook": "Reinventing the core. We bridge the gap between business strategy and IT, building the digital muscle to compete.",
+      "serviceSuite": [
+        "Legacy Modernization: Hollow-the-Core, Microservices, Cloud Migration.",
+        "Data Architecture: Data Governance, Lakehouse Implementation, BI Dashboards.",
+        "Cybersecurity: Zero Trust Architecture & Vulnerability Scanning.",
+        "GenAI & Automation: Process Mining (RPA), Custom LLMs, Human-in-Loop flows."
+      ]
+    },
+    {
+      "name": "People & Organization",
+      "headline": "Empowering organizations to move faster.",
+      "hook": "Strategy fails without the right people. We build cultures that perform and organizations that are agile.",
+      "serviceSuite": [
+        "Org Design: Spans & Layers, Agile Squads, Decision Rights (RAPID).",
+        "Talent Management: Workforce Planning, EVP Design, Succession Planning.",
+        "Culture & Change: Diagnostics, Intervention Design, Leadership Alignment.",
+        "Performance Mgmt: KPI Cascading, Incentive Design."
+      ]
+    },
+    {
+      "name": "Corporate Finance, M&A & Restructuring",
+      "headline": "Architecting consolidation (BUMN Focus).",
+      "hook": "From '1000 to 200' entities. We guide complex mergers, holding formations, and rationalizations.",
+      "serviceSuite": [
+        "Strategic Consolidation (Holdingisasi): Holding Design, Asset Transfers (Inbreng).",
+        "M&A & Carve-Outs: Due Diligence, Divestitures, Synergy Valuation.",
+        "Post-Merger Integration (PMI): Integration Office (IMO), Cultural Harmonization.",
+        "Turnaround (PKPU): Debt Restructuring, Liquidity Mgmt (13-week cash flow)."
+      ]
+    },
+    {
+      "name": "Marketing & Sales",
+      "headline": "Putting the customer at the center.",
+      "hook": "Growth comes from understanding value. We help clients find new customers, keep existing ones, and price for profit.",
+      "serviceSuite": [
+        "GTM Strategy: Segmentation, Value Prop, Channel Strategy.",
+        "Pricing Optimization: Elasticity Modeling, Discount Mgmt, Dynamic Pricing.",
+        "Sales Force Effectiveness: Territory Planning, Incentive Redesign.",
+        "Customer Experience (CX): Journey Mapping, NPS Systems."
+      ]
+    },
+    {
+      "name": "Sustainability & ESG",
+      "headline": "Turning sustainability into a license to operate.",
+      "hook": "Navigating the transition to Net Zero to capture green premiums and lower cost of capital.",
+      "serviceSuite": [
+        "Decarbonization: Carbon Baselining (Scope 1-3), Abatement Curves (MACC).",
+        "Green Business Building: Green Product Launch, Carbon Credit Strategy.",
+        "ESG Reporting: ISSB/GRI Compliance, Gap Analysis.",
+        "Social Impact: Social Risk Mapping, Shared Value Programs."
+      ]
+    }
+  ],
+  "industries": [
+    { "cluster": "Natural Resources", "name": "Agro", "hook": "Feeding the world sustainably.", "coreServices": ["Yield Maximization","Precision Farming","RSPO Compliance"], "localContext": "Plasma Partnership & 20% Compliance: Managing Koperasi relationships and smallholder regulations." },
+    { "cluster": "Natural Resources", "name": "Forestry", "hook": "Balancing commerce & conservation.", "coreServices": ["Wood Supply Chain","Carbon Credits","Mill Ops"], "localContext": "SVLK & Social Forestry: Timber legality certification & resolving land tenure issues." },
+    { "cluster": "Natural Resources", "name": "Mining", "hook": "Reshaping resources for transition.", "coreServices": ["Pit-to-Port","Predictive Maintenance","Decarbonization"], "localContext": "RKAB Approval & Hilirisasi: Aligning mine plans with ESDM & Smelter mandates." },
+    { "cluster": "Industrial", "name": "Automotive", "hook": "Navigating the mobility transition.", "coreServices": ["EV Strategy","Lean (Kaizen)","Dealer Networks"], "localContext": "TKDN Optimization: Maximizing Local Content scores for tax incentives." },
+    { "cluster": "Industrial", "name": "Construction", "hook": "Building infrastructure of tomorrow.", "coreServices": ["PMO","Procurement","BIM/Digital Twin"], "localContext": "OSS-RBA & Land Acquisition: Navigating licensing & Pengadaan Lahan laws." },
+    { "cluster": "Industrial", "name": "General Industry", "hook": "The next generation of production.", "coreServices": ["Industry 4.0","TQM","Energy Efficiency"], "localContext": "SNI Certification & Industrial Relations: Managing LKS Bipartit & Unions." },
+    { "cluster": "Industrial", "name": "FnB", "hook": "Innovating for the modern consumer.", "coreServices": ["Portfolio Strategy","Cold Chain","Route-to-Market"], "localContext": "Halal Assurance (SJPH): Full BPJPH compliance & audit preparation." },
+    { "cluster": "Services", "name": "Finance", "hook": "Modernizing the financial core.", "coreServices": ["Digital Banking","Basel III","RPA"], "localContext": "OJK & BI Compliance: Navigating POJK, SLIK, and Antasena reporting." },
+    { "cluster": "Services", "name": "ICT", "hook": "Connecting the digital economy.", "coreServices": ["B2B Strategy","Capex Optimization","Data Centers"], "localContext": "Data Sovereignty (PP 71/2019): Public vs. Private scope data localization strategies." },
+    { "cluster": "Services", "name": "Translog", "hook": "Moving the world faster.", "coreServices": ["Network Design","Warehouse Auto","Last-Mile"], "localContext": "Bonded Logistics (PLB): Optimizing Customs (Bea Cukai) & dwelling time." }
+  ],
+  "units": [
+    { "name": "Baswara X", "role": "The Tech Builders", "hook": "Don't just advise. Build.", "coreOfferings": ["Enterprise GenAI: Bahasa Indonesia LLMs & RAG Engines","Industrial IoT: Edge/LoRaWAN for remote sites","Data Fabric: Unified governance"] },
+    { "name": "Baswara Implementation", "role": "The Executors", "hook": "Don't just plan. Make it happen.", "coreOfferings": ["Site Turnaround: Interim Management (IMO)","Capability Building: Field & Forum coaching","Project Assurance: PMO for Mega-Projects"] },
+    { "name": "Baswara Ventures", "role": "The Incubators", "hook": "Create new growth engines.", "coreOfferings": ["Corporate Venture Building: Concept-to-Cash spin-offs","Digital Ecosystems: B2B2C Platforms for UMKM","Strategic JVs: Structuring partnerships with BUMN"] }
+  ],
+  "generatedAt": "2025-12-07T23:51:19.434Z"
+}

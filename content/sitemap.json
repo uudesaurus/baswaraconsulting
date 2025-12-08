@@ -1,0 +1,35 @@
+{
+  "site": {
+    "home": "/",
+    "industries": [
+      {"name":"Agro","slug":"/industries/agro"},
+      {"name":"Forestry","slug":"/industries/forestry"},
+      {"name":"Mining","slug":"/industries/mining"},
+      {"name":"Automotive","slug":"/industries/automotive"},
+      {"name":"Construction","slug":"/industries/construction"},
+      {"name":"General Industry","slug":"/industries/general-industry"},
+      {"name":"FnB","slug":"/industries/fnb"},
+      {"name":"Finance","slug":"/industries/finance"},
+      {"name":"ICT","slug":"/industries/ict"},
+      {"name":"Translog","slug":"/industries/translog"}
+    ],
+    "capabilities": [
+      {"name":"Strategy & Transformation","slug":"/capabilities/strategy"},
+      {"name":"Operations & Supply Chain","slug":"/capabilities/operations"},
+      {"name":"Digital & Technology","slug":"/capabilities/digital"},
+      {"name":"People & Organization","slug":"/capabilities/people"},
+      {"name":"Corporate Finance, M&A & Restructuring","slug":"/capabilities/finance"},
+      {"name":"Marketing & Sales","slug":"/capabilities/marketing"},
+      {"name":"Sustainability & ESG","slug":"/capabilities/sustainability"}
+    ],
+    "units": [
+      {"name":"Baswara X","slug":"/units/x"},
+      {"name":"Baswara Implementation","slug":"/units/implementation"},
+      {"name":"Baswara Ventures","slug":"/units/ventures"}
+    ],
+    "insights": "/insights",
+    "about": "/about",
+    "contact": "/contact"
+  },
+  "generatedAt": "2025-12-07T23:36:13.567Z"
+}

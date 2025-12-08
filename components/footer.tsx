@@ -20,7 +20,7 @@ export default function Footer() {
               </Link>
             </Button>
             <Button variant="ghost" size="icon" asChild>
-              <Link href="mailto:hello@baswaraconsulting.com" aria-label="Email">
+              <Link href="mailto:office@baswaraconsulting.com" aria-label="Email">
                 <Mail className="h-5 w-5" />
               </Link>
             </Button>
@@ -61,10 +61,9 @@ export default function Footer() {
         <div>
           <h4 className="font-medium text-lg mb-4">Contact</h4>
           <address className="not-italic text-muted-foreground">
-            <p>Jakarta, Indonesia</p>
             <p className="mt-2">
-              <a href="mailto:contact@ayahconsulting.com" className="hover:text-foreground transition-colors">
-                hello@baswaraconsulting.com
+              <a href="mailto:office@baswaraconsulting.com" className="hover:text-foreground transition-colors">
+                office@baswaraconsulting.com
               </a>
             </p>
           </address>

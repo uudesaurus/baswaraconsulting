@@ -35,74 +35,46 @@ import { CalendarIcon } from "lucide-react"
 const jobListings = [
   {
     id: 1,
-    title: "Associate Consultant",
+    title: "Consulting Analyst",
     type: "Full-time",
     location: "Jakarta, Surabaya",
     department: "Consulting",
     description: {
-      overview: `We are seeking a talented Associate Consultant to join our growing team at Baswara Consulting. The ideal candidate will work closely with senior consultants to deliver high-impact solutions to our clients in healthcare, supply chain, and digital transformation sectors.`,
-      responsibilities: [
-        "Support client engagements and deliver high-quality work products",
-        "Conduct research and analysis to support project deliverables",
-        "Prepare presentations and reports for client meetings",
-        "Collaborate with team members on internal initiatives",
-        "Assist in developing proposals and client solutions",
-        "Participate in client workshops and strategic planning sessions"
-      ],
+      overview: `Baswara Consulting is seeking talented and driven Consulting Analysts to join our dynamic team on a full-time basis. This is an entry-level position ideal for high-achieving graduates.
+
+As a Consulting Analyst, you will be a core member of our consulting team, working on high-impact projects for both international and national clients. This role offers significant exposure to diverse industries and business challenges, from local market strategies to global expansion initiatives. You will be directly involved in research, analysis, and stakeholder engagement to deliver strategic solutions for our senior clients.`,
       requirements: {
-        education: [
-          "Bachelor's degree in Business, Engineering, Healthcare, or related field",
-          "1-3 years of relevant consulting or industry experience",
-          "Strong academic record and demonstrated leadership experience"
+        whoWeAreLookingFor: [
+          "Open to graduates from all academic backgrounds and universities. Fresh graduates are welcome to apply.",
+          "Demonstrated experience in at least one consulting project is required (e.g., through internships, freelance work, or university projects). We highly value experience in strategic engagements such as Market Entry, Corporate Strategy, Mergers & Acquisitions (M&A) support, or Growth Strategy.",
+          "Must possess a foundational skillset across the following three areas:",
+          "a. Financial Acumen (e.g., financial modeling, valuation, business case analysis)",
+          "b. Consulting Frameworks (e.g., market analysis, problem-solving, strategic planning)",
+          "c. Legal & Compliance (e.g., understanding of regulatory landscapes, due diligence)",
+          "Specialized expertise in any specific domain is highly valued.",
+          "Excellent communication and interpersonal skills in both English and Bahasa Indonesia.",
+          "Preferably based in the Jabodetabek area to accommodate a hybrid work model."
         ],
-        technical: [
-          "Excellent analytical and problem-solving abilities",
-          "Strong proficiency in data analysis and visualization",
-          "Advanced Microsoft Office suite skills (Excel, PowerPoint, Word)",
-          "Experience with business analysis tools and methodologies",
-          "Knowledge of project management principles"
-        ],
-        soft: [
-          "Outstanding written and verbal communication",
-          "Strong presentation and facilitation abilities",
-          "Excellent interpersonal and team collaboration skills",
-          "Ability to work effectively under pressure",
-          "Strong attention to detail and quality orientation",
-          "Fluency in English and Bahasa Indonesia"
+        requiredAttributes: [
+          "A fast learner who is adaptive and capable of working effectively under tight deadlines.",
+          "Comfortable in a collaborative, fast-paced consulting environment.",
+          "Detail-oriented with strong analytical, writing, and presentation skills."
         ]
       },
-      benefits: {
-        compensation: [
-          "Competitive salary package",
-          "Performance-based bonuses",
-          "Comprehensive health insurance",
-          "Annual leave and paid time off",
-          "Professional certification support"
-        ],
-        growth: [
-          "Structured training and development program",
-          "Mentorship from senior consultants",
-          "Career advancement opportunities",
-          "Access to industry conferences and workshops",
-          "Cross-functional project exposure"
-        ],
-        environment: [
-          "Dynamic and collaborative team culture",
-          "Modern office facilities",
-          "Flexible work arrangements",
-          "Regular team building activities",
-          "Inclusive and diverse workplace"
-        ]
-      },
-      locations: [
-        {
-          primary: "Jakarta",
-          secondary: "Surabaya (with travel opportunities)"
-        }
+      selectionProcess: [
+        "CV & Cover Letter Screening",
+        "Focus Group Discussion (FGD)",
+        "Final Interview",
+        "Announcement"
       ],
-      closing: "Join us in our mission to transform Indonesian businesses through innovative consulting solutions. We value diversity, continuous learning, and professional excellence."
+      applicationDetails: {
+        email: "office@baswaraconsulting.com",
+        subject: "[Baswara Consulting – Consulting Analyst – Your Full Name]",
+        deadline: "16 September 2025, 5:00 PM WIB",
+        note: "Only shortlisted candidates will be contacted to proceed to the next stage"
+      }
     },
-    slug: "associate-consultant",
+    slug: "consulting-analyst",
   },
   // Add other job listings here...
 ]
@@ -200,101 +172,56 @@ export default function JobPage({ params }: { params: { slug: string } }) {
             <div className="space-y-12">
               {/* Overview */}
               <div className="prose prose-gray dark:prose-invert max-w-none">
-                <p className="text-lg leading-relaxed">{job.description.overview}</p>
+                <p className="text-lg leading-relaxed whitespace-pre-line">{job.description.overview}</p>
               </div>
 
-              {/* Key Responsibilities */}
+              {/* Who We Are Looking For */}
               <div>
-                <h2 className="text-2xl font-semibold mb-4">Key Responsibilities</h2>
+                <h2 className="text-2xl font-semibold mb-4">Who We Are Looking For</h2>
                 <ul className="list-disc pl-6 space-y-2">
-                  {job.description.responsibilities.map((item, index) => (
+                  {job.description.requirements.whoWeAreLookingFor.map((item, index) => (
                     <li key={index} className="text-muted-foreground">{item}</li>
                   ))}
                 </ul>
               </div>
 
-              {/* Requirements */}
+              {/* Required Attributes */}
               <div>
-                <h2 className="text-2xl font-semibold mb-6">Requirements</h2>
-                <div className="space-y-8">
-                  <div>
-                    <h3 className="text-xl font-medium mb-3">Education & Experience</h3>
-                    <ul className="list-disc pl-6 space-y-2">
-                      {job.description.requirements.education.map((item, index) => (
-                        <li key={index} className="text-muted-foreground">{item}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-medium mb-3">Technical Skills</h3>
-                    <ul className="list-disc pl-6 space-y-2">
-                      {job.description.requirements.technical.map((item, index) => (
-                        <li key={index} className="text-muted-foreground">{item}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-medium mb-3">Soft Skills</h3>
-                    <ul className="list-disc pl-6 space-y-2">
-                      {job.description.requirements.soft.map((item, index) => (
-                        <li key={index} className="text-muted-foreground">{item}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              {/* What We Offer */}
-              <div>
-                <h2 className="text-2xl font-semibold mb-6">What We Offer</h2>
-                <div className="space-y-8">
-                  <div>
-                    <h3 className="text-xl font-medium mb-3">Compensation & Benefits</h3>
-                    <ul className="list-disc pl-6 space-y-2">
-                      {job.description.benefits.compensation.map((item, index) => (
-                        <li key={index} className="text-muted-foreground">{item}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-medium mb-3">Growth & Development</h3>
-                    <ul className="list-disc pl-6 space-y-2">
-                      {job.description.benefits.growth.map((item, index) => (
-                        <li key={index} className="text-muted-foreground">{item}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-medium mb-3">Work Environment</h3>
-                    <ul className="list-disc pl-6 space-y-2">
-                      {job.description.benefits.environment.map((item, index) => (
-                        <li key={index} className="text-muted-foreground">{item}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              {/* Location */}
-              <div>
-                <h2 className="text-2xl font-semibold mb-4">Location</h2>
-                <div className="space-y-2">
-                  {job.description.locations.map((loc, index) => (
-                    <div key={index}>
-                      <p className="text-muted-foreground">
-                        <span className="font-medium text-foreground">Primary:</span> {loc.primary}
-                      </p>
-                      <p className="text-muted-foreground">
-                        <span className="font-medium text-foreground">Secondary:</span> {loc.secondary}
-                      </p>
-                    </div>
+                <h2 className="text-2xl font-semibold mb-4">Required Attributes</h2>
+                <ul className="list-disc pl-6 space-y-2">
+                  {job.description.requirements.requiredAttributes.map((item, index) => (
+                    <li key={index} className="text-muted-foreground">{item}</li>
                   ))}
-                </div>
+                </ul>
               </div>
 
-              {/* Closing */}
+              {/* Selection Process */}
+              <div>
+                <h2 className="text-2xl font-semibold mb-4">Selection Process</h2>
+                <ol className="list-decimal pl-6 space-y-2">
+                  {job.description.selectionProcess.map((item, index) => (
+                    <li key={index} className="text-muted-foreground">{item}</li>
+                  ))}
+                </ol>
+              </div>
+
+              {/* Application Details */}
               <div className="bg-secondary/50 p-6 rounded-lg">
-                <p className="text-lg font-medium">{job.description.closing}</p>
+                <h2 className="text-2xl font-semibold mb-4">Application Details</h2>
+                <div className="space-y-3">
+                  <p className="text-muted-foreground">
+                    <span className="font-medium text-foreground">Email:</span> {job.description.applicationDetails.email}
+                  </p>
+                  <p className="text-muted-foreground">
+                    <span className="font-medium text-foreground">Subject:</span> {job.description.applicationDetails.subject}
+                  </p>
+                  <p className="text-muted-foreground">
+                    <span className="font-medium text-foreground">Deadline:</span> {job.description.applicationDetails.deadline}
+                  </p>
+                  <p className="text-sm text-muted-foreground mt-4">
+                    {job.description.applicationDetails.note}
+                  </p>
+                </div>
               </div>
             </div>
           </div>

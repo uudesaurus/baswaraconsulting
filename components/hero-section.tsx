@@ -1,9 +1,6 @@
 "use client"
 
 import { useEffect, useRef } from "react"
-import { Button } from "@/components/ui/button"
-import { ArrowRight, Download } from "lucide-react"
-import Link from "next/link"
 import ClientMarquee from "@/components/client-marquee"
 
 export default function HeroSection() {
@@ -66,14 +63,6 @@ export default function HeroSection() {
             integrated, actionable strategy.
           </p>
 
-          <div className="flex flex-wrap justify-center gap-4 pt-4 animate-fade-up [animation-delay:500ms] opacity-0">
-            <Button size="lg" variant="outline" asChild>
-              <Link href="#">
-                Download Company Profile
-                <Download className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
         </div>
 
         <div className="mt-20 animate-fade-up [animation-delay:600ms] opacity-0">

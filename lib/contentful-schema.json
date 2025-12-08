@@ -1,0 +1,49 @@
+{
+  "contentTypes": [
+    {
+      "id": "capability",
+      "name": "Capability",
+      "fields": [
+        {"id":"internalName","name":"internalName","type":"Symbol","required":true},
+        {"id":"slug","name":"slug","type":"Symbol","required":true},
+        {"id":"heroHeadline","name":"heroHeadline","type":"Text"},
+        {"id":"serviceDeepDive","name":"serviceDeepDive","type":"RichText"},
+        {"id":"bumnContext","name":"bumnContext","type":"RichText"},
+        {"id":"relatedIndustries","name":"relatedIndustries","type":"Array","items":{"type":"Link","linkType":"Entry"}}
+      ]
+    },
+    {
+      "id": "industry",
+      "name": "Industry",
+      "fields": [
+        {"id":"internalName","name":"internalName","type":"Symbol","required":true},
+        {"id":"slug","name":"slug","type":"Symbol","required":true},
+        {"id":"localContextHook","name":"localContextHook","type":"Text"},
+        {"id":"localContextBody","name":"localContextBody","type":"RichText"},
+        {"id":"coreCapabilities","name":"coreCapabilities","type":"Array","items":{"type":"Link","linkType":"Entry"}},
+        {"id":"deliveryUnits","name":"deliveryUnits","type":"Array","items":{"type":"Link","linkType":"Entry"}}
+      ]
+    },
+    {
+      "id": "specializedUnit",
+      "name": "SpecializedUnit",
+      "fields": [
+        {"id":"brandName","name":"brandName","type":"Symbol","required":true},
+        {"id":"slug","name":"slug","type":"Symbol","required":true},
+        {"id":"valueProposition","name":"valueProposition","type":"Text"},
+        {"id":"techAssets","name":"techAssets","type":"RichText"}
+      ]
+    },
+    {
+      "id": "insight",
+      "name": "Insight",
+      "fields": [
+        {"id":"title","name":"title","type":"Symbol","required":true},
+        {"id":"industryTags","name":"industryTags","type":"Array","items":{"type":"Link","linkType":"Entry"}},
+        {"id":"capabilityTags","name":"capabilityTags","type":"Array","items":{"type":"Link","linkType":"Entry"}},
+        {"id":"publishDate","name":"publishDate","type":"Date"},
+        {"id":"pdfDownload","name":"pdfDownload","type":"Link","linkType":"Asset"}
+      ]
+    }
+  ]
+}

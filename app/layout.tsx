@@ -102,7 +102,7 @@ export default function RootLayout({
     "@id": "https://baswaraconsulting.com",
     "name": "Baswara Consulting",
     "url": "https://baswaraconsulting.com",
-    "logo": "https://baswaraconsulting.com/logo.png",
+    "logo": "https://baswaraconsulting.com/logo.svg",
     "image": "https://baswaraconsulting.com/og-image.jpg",
     "description": "Baswara Consulting delivers transformative strategies and actionable insights across industries, driving sustainable growth and operational excellence.",
     "address": {
