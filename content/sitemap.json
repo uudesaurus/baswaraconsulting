@@ -1,35 +1,86 @@
 {
   "site": {
     "home": "/",
-    "industries": [
-      {"name":"Agro","slug":"/industries/agro"},
-      {"name":"Forestry","slug":"/industries/forestry"},
-      {"name":"Mining","slug":"/industries/mining"},
-      {"name":"Automotive","slug":"/industries/automotive"},
-      {"name":"Construction","slug":"/industries/construction"},
-      {"name":"General Industry","slug":"/industries/general-industry"},
-      {"name":"FnB","slug":"/industries/fnb"},
-      {"name":"Finance","slug":"/industries/finance"},
-      {"name":"ICT","slug":"/industries/ict"},
-      {"name":"Translog","slug":"/industries/translog"}
-    ],
-    "capabilities": [
-      {"name":"Strategy & Transformation","slug":"/capabilities/strategy"},
-      {"name":"Operations & Supply Chain","slug":"/capabilities/operations"},
-      {"name":"Digital & Technology","slug":"/capabilities/digital"},
-      {"name":"People & Organization","slug":"/capabilities/people"},
-      {"name":"Corporate Finance, M&A & Restructuring","slug":"/capabilities/finance"},
-      {"name":"Marketing & Sales","slug":"/capabilities/marketing"},
-      {"name":"Sustainability & ESG","slug":"/capabilities/sustainability"}
-    ],
-    "units": [
-      {"name":"Baswara X","slug":"/units/x"},
-      {"name":"Baswara Implementation","slug":"/units/implementation"},
-      {"name":"Baswara Ventures","slug":"/units/ventures"}
-    ],
-    "insights": "/insights",
+    "industries": {
+      "overview": "/industries",
+      "naturalResources": {
+        "cluster": "Natural Resources",
+        "items": [
+          {"name":"Agro","slug":"/industries/agro"},
+          {"name":"Forestry","slug":"/industries/forestry"},
+          {"name":"Mining","slug":"/industries/mining"}
+        ]
+      },
+      "industrial": {
+        "cluster": "Industrial",
+        "items": [
+          {"name":"Automotive","slug":"/industries/automotive"},
+          {"name":"Construction","slug":"/industries/construction"},
+          {"name":"General Industry","slug":"/industries/general-industry"},
+          {"name":"FnB","slug":"/industries/fnb"}
+        ]
+      },
+      "services": {
+        "cluster": "Services",
+        "items": [
+          {"name":"Finance","slug":"/industries/finance"},
+          {"name":"ICT","slug":"/industries/ict"},
+          {"name":"Translog","slug":"/industries/translog"}
+        ]
+      }
+    },
+    "capabilities": {
+      "overview": "/capabilities",
+      "items": [
+        {"name":"Strategy & Transformation","slug":"/capabilities/strategy"},
+        {"name":"Operations & Supply Chain","slug":"/capabilities/operations"},
+        {"name":"Digital & Technology","slug":"/capabilities/digital"},
+        {"name":"People & Organizational Performance","slug":"/capabilities/people"},
+        {"name":"Corporate Finance, M&A & Restructuring","slug":"/capabilities/finance"},
+        {"name":"Marketing & Sales","slug":"/capabilities/marketing"},
+        {"name":"Sustainability & ESG","slug":"/capabilities/sustainability"}
+      ]
+    },
+    "units": {
+      "overview": "/units",
+      "items": [
+        {"name":"Baswara X","slug":"/units/x","tagline":"Engineering the digital core"},
+        {"name":"Baswara Implementation","slug":"/units/implementation","tagline":"Bridging ambition and results"},
+        {"name":"Baswara Ventures","slug":"/units/ventures","tagline":"Building growth engines"}
+      ]
+    },
+    "insights": {
+      "overview": "/insights",
+      "categories": [
+        "Strategy & Transformation",
+        "Operations & Supply Chain",
+        "Digital & Technology",
+        "People & Organization",
+        "Corporate Finance",
+        "Marketing & Sales",
+        "Sustainability & ESG"
+      ]
+    },
     "about": "/about",
-    "contact": "/contact"
+    "contact": "/contact",
+    "careers": "/career"
   },
-  "generatedAt": "2025-12-07T23:36:13.567Z"
+  "crossLinking": {
+    "description": "Each page type follows a three-dimensional matrix connecting Industries, Capabilities, and Units",
+    "patterns": {
+      "industryPage": {
+        "shows": ["Related Capabilities", "Specialized Units", "Latest Insights"],
+        "linksTo": ["Capability pages", "Unit pages", "Insight articles"]
+      },
+      "capabilityPage": {
+        "shows": ["Applied Industries", "Service Details", "Latest Insights"],
+        "linksTo": ["Industry pages", "Unit pages", "Insight articles"]
+      },
+      "unitPage": {
+        "shows": ["Tech Assets", "Industry Applications", "Capabilities", "Case Studies"],
+        "linksTo": ["Industry pages", "Capability pages", "Insight articles"]
+      }
+    }
+  },
+  "generatedAt": "2025-12-08T00:09:35.752Z"
 }

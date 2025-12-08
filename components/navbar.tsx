@@ -8,10 +8,11 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Menu } from "lucide-react"
 
 const navigation = [
-  { name: "About", href: "/about" },
-  { name: "Services", href: "/#services" },
-  // { name: "Approach", href: "/approach" },
+  { name: "Capabilities", href: "/capabilities" },
+  { name: "Industries", href: "/industries" },
+  { name: "Specialized Units", href: "/units" },
   { name: "Insights", href: "/insights" },
+  { name: "About", href: "/about" },
   { name: "Career", href: "/career" },
 ]
 
