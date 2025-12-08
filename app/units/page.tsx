@@ -57,7 +57,7 @@ export default function UnitsPage() {
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {UNITS.map((unit) => {
+            {UNITS.map((unit, unitIndex) => {
               const Icon = unitIcons[unit.slug as keyof typeof unitIcons]
               
               return (
@@ -90,8 +90,8 @@ export default function UnitsPage() {
 
                   {/* Core Offerings */}
                   <div className="space-y-3 mb-6">
-                    {unit.coreOfferings.map((offering, idx) => (
-                      <div key={idx} className="flex items-start gap-2">
+                    {unit.coreOfferings.map((offering, offeringIdx) => (
+                      <div key={offeringIdx} className="flex items-start gap-2">
                         <div className="mt-1 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
                         <div>
                           <div className="font-semibold text-sm">{offering.title}</div>
@@ -109,7 +109,7 @@ export default function UnitsPage() {
 
                   {/* Decorative Element */}
                   <div className="absolute top-4 right-4 text-6xl font-bold text-slate-100 group-hover:text-primary/10 transition-colors">
-                    {idx + 1}
+                    {unitIndex + 1}
                   </div>
                 </Link>
               )
