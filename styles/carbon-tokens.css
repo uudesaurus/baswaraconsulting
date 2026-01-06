@@ -1,0 +1,209 @@
+/* 
+  IBM Carbon Design System Tokens - Customized for Baswara Consulting
+  Using Baswara Red (#C41E3A) instead of IBM Blue
+  Base Unit: 8px (all measurements in multiples of 8 or 4px)
+*/
+
+:root {
+  /* ===== SPACING TOKENS (8px base unit) ===== */
+  --spacing-01: 4px;
+  --spacing-02: 8px;
+  --spacing-03: 12px;
+  --spacing-04: 16px;
+  --spacing-05: 20px;
+  --spacing-06: 24px;
+  --spacing-07: 32px;
+  --spacing-08: 40px;
+  --spacing-09: 48px;
+  --spacing-10: 56px;
+  --spacing-11: 64px;
+  --spacing-12: 72px;
+
+  /* ===== COLOR PALETTE ===== */
+  
+  /* Baswara Red (Primary - replacing IBM Blue) */
+  --red-50: #fce5e9;  /* Lightest tint */
+  --red-60: #f4c1ca;
+  --red-70: #e89aaa;
+  --red-80: #d97389;
+  --red-90: #c41e3a;  /* Brand Red - PRIMARY */
+
+  /* Neutrals (IBM Gray Scale) */
+  --gray-10: #f4f4f4;  /* Layer 01 - Lightest */
+  --gray-20: #e8e8e8;  /* Layer 02 */
+  --gray-30: #d1d1d1;  /* Dividers */
+  --gray-40: #bebebe;
+  --gray-50: #8f8f8f;
+  --gray-60: #6c6c6c;
+  --gray-70: #525252;
+  --gray-80: #393939;
+  --gray-90: #262626;
+  --gray-100: #161616; /* UI Shell background (almost black) */
+
+  /* Semantic colors */
+  --interactive-01: var(--red-90);        /* Primary action */
+  --interactive-02: var(--gray-100);      /* Secondary action */
+  --interactive-03: var(--red-50);        /* Hover state for primary */
+  --interactive-04: var(--gray-10);       /* Hover state for secondary */
+  
+  --ui-background: var(--gray-10);
+  --ui-01: var(--gray-20);                /* Layer 01 - containers */
+  --ui-02: var(--gray-30);                /* Layer 02 - secondary containers */
+  
+  --text-01: var(--gray-100);             /* Primary text */
+  --text-02: var(--gray-70);              /* Secondary text */
+  --text-03: var(--gray-50);              /* Tertiary text */
+  --text-04: #ffffff;                     /* Text on dark backgrounds */
+
+  --focus: var(--red-90);                 /* Focus ring color */
+  --hover-ui: var(--gray-20);             /* Hover state for neutral surfaces */
+
+  --success: #198754;
+  --warning: #ffc107;
+  --error: #dc3545;
+
+  /* ===== TYPOGRAPHY (IBM Plex Sans + Mono) ===== */
+  --font-sans: 'IBM Plex Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+  /* Font sizes & line heights */
+  --heading-01: 14px / 18px;  /* SemiBold 600 */
+  --heading-02: 16px / 20px;  /* SemiBold 600 */
+  --heading-03: 20px / 26px;  /* Regular 400 */
+  --heading-04: 28px / 36px;  /* Regular 400 */
+  --heading-05: 32px / 40px;  /* Regular 400 */
+  --heading-06: 42px / 50px;  /* Light 300 */
+
+  --body-short-01: 14px / 18px;  /* Regular 400 */
+  --body-long-01: 14px / 20px;   /* Regular 400 */
+  --body-long-02: 16px / 24px;   /* Regular 400 */
+
+  --label-01: 12px / 16px;  /* SemiBold 600 */
+  --caption-01: 12px / 16px; /* Regular 400 */
+  --caption-02: 12px / 18px; /* Regular 400 */
+
+  /* ===== BORDER RADIUS (SHARP IBM AESTHETIC) ===== */
+  --radius-0: 0px;           /* Sharp corners - DEFAULT for components */
+  --radius-1: 2px;           /* Soft interactions only */
+  --radius-2: 4px;           /* Reserved, rarely used */
+
+  /* ===== SHADOWS (IBM uses layering, not soft shadows) ===== */
+  --shadow-none: none;
+  --shadow-01: inset 0 1px 0 0 rgba(0, 0, 0, 0.05);  /* Subtle inner border */
+  --shadow-02: 0 4px 8px 0 rgba(0, 0, 0, 0.1);       /* Elevation 01 */
+  --shadow-03: 0 8px 16px 0 rgba(0, 0, 0, 0.15);     /* Elevation 02 */
+
+  /* ===== GRID & LAYOUT ===== */
+  --grid-columns: 12;
+  --grid-gutter: 32px;  /* Desktop */
+  --grid-gutter-condensed: 16px;
+  --container-max-width: 1200px;
+
+  /* ===== TRANSITION & ANIMATION ===== */
+  --transition-base: 200ms cubic-bezier(0.2, 0, 0.38, 0.9); /* Fast smooth */
+  --transition-ui: 150ms cubic-bezier(0.2, 0, 0.38, 0.9);
+  --transition-accent: 250ms cubic-bezier(0.1, 0.1, 0.35, 1);
+
+  /* ===== Z-INDEX ===== */
+  --z-index-shell: 9000;           /* UI Shell (navbar) */
+  --z-index-dropdown: 8000;        /* Dropdowns */
+  --z-index-overlay: 7000;         /* Modals */
+  --z-index-sticky: 6000;          /* Sticky content */
+  --z-index-default: 1000;         /* Default content */
+}
+
+/* ===== DARK MODE (Optional) ===== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ui-background: var(--gray-100);
+    --ui-01: var(--gray-90);
+    --ui-02: var(--gray-80);
+    
+    --text-01: #ffffff;
+    --text-02: var(--gray-30);
+    --text-03: var(--gray-40);
+  }
+}
+
+/* ===== RESET & BASELINE ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-sans);
+  color: var(--text-01);
+  background-color: var(--ui-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--text-01);
+  background-color: var(--ui-background);
+}
+
+/* ===== TYPOGRAPHY DEFAULTS ===== */
+h1 {
+  font: 600 42px / 50px var(--font-sans);
+}
+
+h2 {
+  font: 600 32px / 40px var(--font-sans);
+}
+
+h3 {
+  font: 400 28px / 36px var(--font-sans);
+}
+
+h4 {
+  font: 400 20px / 26px var(--font-sans);
+}
+
+h5 {
+  font: 600 16px / 20px var(--font-sans);
+}
+
+h6 {
+  font: 600 14px / 18px var(--font-sans);
+}
+
+p {
+  font: 400 14px / 20px var(--font-sans);
+  margin-bottom: var(--spacing-04);
+}
+
+code, pre {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 16px;
+}
+
+/* ===== FOCUS STATE (Keyboard accessibility) ===== */
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* ===== SCROLLBAR (IBM style - sharp) ===== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gray-30);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gray-60);
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-70);
+}

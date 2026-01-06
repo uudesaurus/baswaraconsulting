@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { cn } from "@/lib/utils"
 
 const stats = [
   { value: 26, label: "Years Experience", suffix: "+" },
@@ -33,28 +32,86 @@ export default function StatsSection() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="py-24 relative overflow-hidden">
-      <div className="absolute inset-0 z-0">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[100px]" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-[100px]" />
-      </div>
-
-      <div className="container relative z-10">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+    <section 
+      ref={sectionRef} 
+      style={{
+        backgroundColor: 'var(--ui-background)',
+        paddingTop: 'var(--spacing-11)',
+        paddingBottom: 'var(--spacing-11)',
+        borderTop: '1px solid var(--gray-30)',
+        borderBottom: '1px solid var(--gray-30)',
+        position: 'relative',
+        overflow: 'hidden',
+      }}
+    >
+      <div
+        style={{
+          maxWidth: '1200px',
+          margin: '0 auto',
+          padding: '0 var(--spacing-07)',
+        }}
+      >
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+            gap: 'var(--spacing-09)',
+          }}
+        >
           {stats.map((stat, index) => (
             <div
               key={index}
-              className={cn(
-                "text-center transition-all duration-700 opacity-0 translate-y-8",
-                isVisible && "opacity-100 translate-y-0",
-              )}
-              style={{ transitionDelay: `${index * 150}ms` }}
+              style={{
+                textAlign: 'center',
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(32px)',
+                transition: `all var(--transition-accent) ${index * 150}ms`,
+              }}
             >
-              <div className="text-4xl md:text-5xl font-heading mb-2">
-                <span className="gradient-text">{stat.value}</span>
-                <span className="text-accent">{stat.suffix}</span>
+              {/* Large number */}
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'baseline',
+                  justifyContent: 'center',
+                  gap: '4px',
+                  marginBottom: 'var(--spacing-03)',
+                }}
+              >
+                <span
+                  style={{
+                    fontSize: '48px',
+                    lineHeight: '56px',
+                    fontWeight: 600,
+                    color: 'var(--red-90)',
+                  }}
+                >
+                  {stat.value}
+                </span>
+                <span
+                  style={{
+                    fontSize: '28px',
+                    fontWeight: 400,
+                    color: 'var(--red-90)',
+                  }}
+                >
+                  {stat.suffix}
+                </span>
               </div>
-              <p className="text-muted-foreground">{stat.label}</p>
+              
+              {/* Label */}
+              <p
+                style={{
+                  fontSize: '14px',
+                  lineHeight: '20px',
+                  color: 'var(--text-02)',
+                  fontWeight: 500,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.5px',
+                }}
+              >
+                {stat.label}
+              </p>
             </div>
           ))}
         </div>

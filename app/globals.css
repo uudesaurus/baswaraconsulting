@@ -1,38 +1,46 @@
+/* Import IBM Carbon Design System tokens */
+@import '../styles/carbon-tokens.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
+    /* Tailwind compatibility layer mapping to Carbon tokens */
     --background: 0 0% 100%;
-    --foreground: 222 47% 11%;
+    --foreground: 0 0% 9%;
 
-    --card: 0 0% 98%;
-    --card-foreground: 222 47% 11%;
+    --card: 0 0% 96%;
+    --card-foreground: 0 0% 9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover-foreground: 0 0% 9%;
 
-    --primary: 354 70% 34%;  /* Bain's deep red */
+    /* Baswara Red Primary */
+    --primary: 354 85% 38%;  /* #C41E3A */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 14% 96%;
-    --secondary-foreground: 222 47% 11%;
+    /* IBM Gray Secondary */
+    --secondary: 0 0% 96%;  /* $gray-10 */
+    --secondary-foreground: 0 0% 9%;
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 9% 46%;
+    --muted: 0 0% 82%;      /* $gray-30 */
+    --muted-foreground: 0 0% 44%;
 
-    --accent: 354 70% 54%;  /* Brighter red for accents */
+    /* Accent = Bright Red */
+    --accent: 354 90% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 354 70% 34%;
+    --border: 0 0% 82%;     /* $gray-30 */
+    --input: 0 0% 82%;
+    --ring: 354 85% 38%;    /* Baswara red focus */
 
-    --radius: 0.5rem;
+    /* IBM Sharp aesthetic - NO border radius by default */
+    --radius: 0px;
   }
 }
 
@@ -40,8 +48,15 @@
   * {
     @apply border-border;
   }
+  
+  /* Account for fixed 48px navbar */
+  html {
+    scroll-padding-top: 48px;
+  }
+  
   body {
     @apply bg-background text-foreground;
+    padding-top: 48px;
   }
 
   h1,

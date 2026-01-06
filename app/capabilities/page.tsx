@@ -12,26 +12,45 @@ export default function CapabilitiesPage(){
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary via-primary/95 to-accent text-white py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
-        <div className="container relative">
+      <section
+        style={{
+          backgroundColor: 'white',
+          paddingTop: 'var(--spacing-11)',
+          paddingBottom: 'var(--spacing-11)',
+          borderBottom: '1px solid var(--gray-30)',
+        }}
+      >
+        <div className="container">
           <div className="max-w-4xl">
-            <div className="inline-block px-4 py-1 bg-white/20 backdrop-blur-sm text-white text-sm font-semibold rounded-full mb-6">
+            <div
+              style={{
+                display: 'inline-block',
+                padding: 'var(--spacing-02) var(--spacing-04)',
+                backgroundColor: 'var(--ui-02)',
+                border: '1px solid var(--gray-30)',
+                fontSize: '12px',
+                fontWeight: 600,
+                letterSpacing: '0.5px',
+                textTransform: 'uppercase',
+                marginBottom: 'var(--spacing-06)',
+              }}
+            >
               Functional Expertise
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            <h1 style={{ fontSize: '48px', lineHeight: '56px', fontWeight: 600, color: 'var(--text-01)', marginBottom: 'var(--spacing-04)' }}>
               Our Capabilities
             </h1>
-            <p className="text-xl md:text-2xl opacity-90 mb-8 leading-relaxed">
-              Seven core capabilities that combine McKinsey-style strategic thinking with 
-              hands-on execution. We don't just recommend—we deliver results.
+            <p style={{ fontSize: '18px', lineHeight: '28px', color: 'var(--text-02)', marginBottom: 'var(--spacing-09)' }}>
+              Seven core capabilities that combine strategic thinking with hands-on execution. We don't just recommend—we deliver results.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <Button size="lg" variant="secondary" asChild>
-                <Link href="/contact">
-                  Discuss Your Needs <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
+            <div style={{ display: 'flex', gap: 'var(--spacing-04)', flexWrap: 'wrap' }}>
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center px-[var(--spacing-06)] h-12 text-[14px] font-semibold text-white bg-[var(--red-90)] hover:bg-[var(--red-80)] transition-colors"
+                style={{ textDecoration: 'none', border: 'none', cursor: 'pointer' }}
+              >
+                Discuss Your Needs
+              </Link>
             </div>
           </div>
         </div>
@@ -55,19 +74,20 @@ export default function CapabilitiesPage(){
               <Link
                 key={capability.slug}
                 href={`/capabilities/${capability.slug}`}
-                className="group relative bg-gradient-to-br from-white to-slate-50 rounded-xl p-8 border-2 border-slate-200 hover:border-primary hover:shadow-2xl transition-all duration-300"
+                className="group relative p-8 border border-[var(--gray-30)] bg-white transition-all duration-200 hover:border-[var(--red-90)] hover:shadow-[0_4px_8px_rgba(196,30,58,0.1)]"
+                style={{ textDecoration: 'none' }}
               >
                 {/* Number Badge */}
-                <div className="absolute top-6 right-6 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-lg group-hover:bg-primary group-hover:text-white transition-colors">
+                <div className="absolute top-6 right-6 w-12 h-12 bg-[var(--ui-02)]" style={{ border: '1px solid var(--gray-30)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, color: 'var(--text-01)' }}>
                   {String(idx + 1).padStart(2, '0')}
                 </div>
 
                 {/* Content */}
                 <div className="pr-16">
-                  <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">
+                  <h3 className="text-2xl font-semibold mb-3 text-[var(--text-01)]">
                     {capability.name}
                   </h3>
-                  <p className="text-muted-foreground mb-6">
+                  <p className="text-[var(--text-02)] mb-6">
                     {capability.hook}
                   </p>
 
@@ -75,21 +95,20 @@ export default function CapabilitiesPage(){
                   <div className="space-y-2 mb-6">
                     {capability.serviceSuite.slice(0, 3).map((service, serviceIdx) => (
                       <div key={serviceIdx} className="flex items-start gap-2">
-                        <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
-                        <span className="text-sm font-medium">{service.title}</span>
+                        <CheckCircle2 className="h-4 w-4" color="var(--red-90)" />
+                        <span className="text-sm font-medium text-[var(--text-01)]">{service.title}</span>
                       </div>
                     ))}
                     {capability.serviceSuite.length > 3 && (
-                      <div className="text-sm text-muted-foreground pl-6">
+                      <div className="text-sm text-[var(--text-02)] pl-6">
                         +{capability.serviceSuite.length - 3} more services
                       </div>
                     )}
                   </div>
 
                   {/* CTA */}
-                  <div className="flex items-center text-sm font-semibold text-primary group-hover:gap-2 transition-all">
-                    Explore Capability
-                    <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  <div className="flex items-center text-sm font-semibold" style={{ color: 'var(--red-90)' }}>
+                    Explore Capability →
                   </div>
                 </div>
               </Link>

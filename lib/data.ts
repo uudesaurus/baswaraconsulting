@@ -42,6 +42,8 @@ export interface Unit {
   coreOfferings: ServiceDetail[]
   relatedIndustries?: string[]
   relatedCapabilities?: string[]
+  subtitle: string // Added subtitle property
+  services: string[]; // Added services property
 }
 
 export interface Insight {
@@ -483,7 +485,9 @@ export const UNITS: Unit[] = [
       }
     ],
     relatedIndustries: ['mining', 'general-industry', 'finance', 'ict', 'translog'],
-    relatedCapabilities: ['digital']
+    relatedCapabilities: ['digital'],
+    subtitle: 'Innovate. Integrate. Elevate.',
+    services: ['AI Solutions', 'IoT Integration', 'Data Management']
   },
   {
     slug: 'implementation',
@@ -506,7 +510,9 @@ export const UNITS: Unit[] = [
       }
     ],
     relatedIndustries: ['agro', 'forestry', 'mining', 'automotive', 'construction', 'general-industry', 'fnb', 'translog'],
-    relatedCapabilities: ['operations', 'strategy', 'finance', 'people', 'sustainability']
+    relatedCapabilities: ['operations', 'strategy', 'finance', 'people', 'sustainability'],
+    subtitle: 'Execute with Excellence',
+    services: ['Project Management', 'Operational Excellence', 'Financial Advisory']
   },
   {
     slug: 'ventures',
@@ -529,7 +535,9 @@ export const UNITS: Unit[] = [
       }
     ],
     relatedIndustries: ['finance', 'ict'],
-    relatedCapabilities: ['strategy', 'marketing', 'finance']
+    relatedCapabilities: ['strategy', 'marketing', 'finance'],
+    subtitle: 'Venture Beyond Limits',
+    services: ['Venture Building', 'Ecosystem Development', 'Strategic Partnerships']
   }
 ]
 

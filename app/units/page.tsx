@@ -2,6 +2,7 @@ import Link from "next/link"
 import { ArrowRight, Building2, Rocket, Code2 } from "lucide-react"
 import { UNITS } from "@/lib/data"
 import { Button } from "@/components/ui/button"
+import UnitsGrid from "@/components/units-grid"
 
 const unitIcons = {
   'x': Code2,
@@ -44,79 +45,7 @@ export default function UnitsPage() {
       </section>
 
       {/* Units Grid */}
-      <section className="py-24 bg-white">
-        <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              How We Deliver
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Each unit brings specialized capabilities, from technology engineering to on-the-ground 
-              execution to venture building.
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {UNITS.map((unit, unitIndex) => {
-              const Icon = unitIcons[unit.slug as keyof typeof unitIcons]
-              
-              return (
-                <Link
-                  key={unit.slug}
-                  href={`/units/${unit.slug}`}
-                  className="group relative bg-gradient-to-br from-white to-slate-50 rounded-2xl p-8 border-2 border-slate-200 hover:border-primary hover:shadow-2xl transition-all duration-300"
-                >
-                  {/* Icon */}
-                  <div className="mb-6 inline-flex items-center justify-center w-16 h-16 rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                    <Icon className="h-8 w-8" />
-                  </div>
-
-                  {/* Content */}
-                  <div className="mb-4">
-                    <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">
-                      {unit.role}
-                    </div>
-                    <h3 className="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">
-                      {unit.name}
-                    </h3>
-                    <p className="text-sm text-primary/80 font-medium mb-4">
-                      {unit.tagline}
-                    </p>
-                  </div>
-
-                  <p className="text-muted-foreground mb-6">
-                    {unit.hook}
-                  </p>
-
-                  {/* Core Offerings */}
-                  <div className="space-y-3 mb-6">
-                    {unit.coreOfferings.map((offering, offeringIdx) => (
-                      <div key={offeringIdx} className="flex items-start gap-2">
-                        <div className="mt-1 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
-                        <div>
-                          <div className="font-semibold text-sm">{offering.title}</div>
-                          <div className="text-xs text-muted-foreground">{offering.description}</div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* CTA */}
-                  <div className="flex items-center text-sm font-semibold text-primary group-hover:gap-2 transition-all">
-                    Learn More
-                    <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  </div>
-
-                  {/* Decorative Element */}
-                  <div className="absolute top-4 right-4 text-6xl font-bold text-slate-100 group-hover:text-primary/10 transition-colors">
-                    {unitIndex + 1}
-                  </div>
-                </Link>
-              )
-            })}
-          </div>
-        </div>
-      </section>
+      <UnitsGrid />
 
       {/* The Baswara Difference */}
       <section className="py-24 bg-slate-50">

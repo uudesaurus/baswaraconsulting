@@ -58,18 +58,18 @@ export default function ApproachSection() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="py-24">
+    <section ref={sectionRef} className="py-24 bg-white" style={{ borderTop: '1px solid var(--gray-30)' }}>
       <div className="container">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="mb-4">Our Approach</h2>
-          <p className="text-xl text-muted-foreground">
+          <h2 className="mb-4 text-[var(--text-01)]">Our Approach</h2>
+          <p className="text-xl" style={{ color: 'var(--text-02)' }}>
             A systematic methodology that transforms complex challenges into actionable solutions.
           </p>
         </div>
 
         <div className="relative">
           {/* Connecting line */}
-          <div className="absolute left-[30px] md:left-1/2 top-0 bottom-0 w-px bg-border" />
+          <div className="absolute left-[30px] md:left-1/2 top-0 bottom-0 w-px" style={{ backgroundColor: 'var(--gray-30)' }} />
 
           <div className="space-y-16">
             {steps.map((step, index) => (
@@ -83,12 +83,12 @@ export default function ApproachSection() {
               >
                 <div className={cn("flex items-center", index % 2 === 0 ? "md:justify-end md:order-1" : "")}>
                   <div className="relative">
-                    <div className="absolute left-[30px] md:left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 w-[60px] h-[60px] bg-background rounded-full border-4 border-accent flex items-center justify-center z-10">
-                      <span className="text-accent font-heading text-xl">{step.number}</span>
+                    <div className="absolute left-[30px] md:left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 w-[60px] h-[60px] bg-white flex items-center justify-center z-10" style={{ border: '2px solid var(--red-90)', color: 'var(--red-90)', fontWeight: 700, fontSize: '18px' }}>
+                      {step.number}
                     </div>
                     <div className="pl-24 md:pl-0">
-                      <h3 className="text-2xl font-medium mb-3">{step.title}</h3>
-                      <p className="text-muted-foreground">{step.description}</p>
+                      <h3 className="text-2xl font-semibold mb-3" style={{ color: 'var(--text-01)' }}>{step.title}</h3>
+                      <p style={{ color: 'var(--text-02)' }}>{step.description}</p>
                     </div>
                   </div>
                 </div>
@@ -99,7 +99,7 @@ export default function ApproachSection() {
         </div>
 
         <div className="mt-16 text-center">
-          <Button asChild>
+          <Button asChild style={{ backgroundColor: 'var(--red-90)', color: 'white', border: 'none', fontWeight: 500 }}>
             <Link href="/approach">
               Learn More About Our Methodology <ArrowRight className="ml-2 h-4 w-4" />
             </Link>

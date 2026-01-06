@@ -80,23 +80,23 @@ export default function CareerPage() {
                 href={`/career/${job.slug}`}
                 className="block group"
               >
-                <div className="bg-card hover:bg-accent p-6 rounded-lg border transition-all duration-200">
+                <div className="p-6 border border-[var(--gray-30)] bg-white transition-all duration-200 hover:border-[var(--red-90)]">
                   <div className="flex items-start justify-between gap-4">
                     <div className="space-y-2">
                       <div className="flex items-center gap-3">
-                        <span className="px-3 py-1 bg-secondary text-sm rounded-full">
+                        <span className="px-3 py-1 text-sm rounded-full" style={{ backgroundColor: 'var(--ui-02)', border: '1px solid var(--gray-30)', color: 'var(--text-01)' }}>
                           {job.type}
                         </span>
-                        <div className="flex items-center text-sm text-muted-foreground">
+                        <div className="flex items-center text-sm" style={{ color: 'var(--text-02)' }}>
                           <MapPin className="h-4 w-4 mr-1" />
                           {job.location}
                         </div>
                       </div>
-                      <h3 className="text-xl font-medium group-hover:text-primary transition-colors">
+                      <h3 className="text-xl font-medium" style={{ color: 'var(--text-01)' }}>
                         {job.title}
                       </h3>
                     </div>
-                    <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                    <ArrowRight className="h-5 w-5" style={{ color: 'var(--text-02)' }} />
                   </div>
                 </div>
               </Link>

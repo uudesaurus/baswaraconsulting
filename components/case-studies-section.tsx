@@ -105,12 +105,12 @@ export default function CaseStudiesSection() {
   }
 
   return (
-    <section className="py-24 bg-secondary/50">
-      <div className="container max-w-7xl">
+    <section className="py-24" style={{ backgroundColor: 'var(--ui-background)', borderTop: '1px solid var(--gray-30)' }}>
+      <div className="container max-w-6xl">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-4xl font-bold mb-4">Case Studies</h2>
-          <p className="text-xl text-muted-foreground">
-            Delivering measurable impact across sectors through innovative solutions and strategic implementation
+          <h2 className="text-[42px] leading-[50px] font-semibold mb-4 text-[var(--text-01)]">Case Studies</h2>
+          <p className="text-xl text-[var(--text-02)]">
+            Delivering measurable impact across sectors through engineered, evidence-based solutions.
           </p>
         </div>
 
@@ -122,10 +122,10 @@ export default function CaseStudiesSection() {
                 <button
                   onClick={() => handleCategoryChange(category.id)}
                   className={cn(
-                    "w-full relative p-8 rounded-xl border bg-background text-left transition-all duration-300",
+                    "w-full relative p-8 border text-left transition-all duration-200",
                     activeCategory === category.id 
-                      ? "border-primary shadow-lg ring-2 ring-primary/10" 
-                      : "border-border/50 hover:border-primary/50 hover:shadow-md"
+                      ? "border-[var(--red-90)] bg-white" 
+                      : "border-[var(--gray-30)] bg-white hover:border-[var(--red-90)]"
                   )}
                 >
                   {/* Category Indicator Line */}
@@ -203,23 +203,23 @@ export default function CaseStudiesSection() {
                       <button
                         onClick={() => setActiveCase(case_.id)}
                         className={cn(
-                          "w-full relative p-6 rounded-xl border bg-background/80 backdrop-blur-sm text-left transition-all duration-300",
+                          "w-full relative p-6 border text-left transition-all duration-200",
                           activeCase === case_.id 
-                            ? "border-primary shadow-md ring-1 ring-primary/10" 
-                            : "border-border/50 hover:border-primary/50 hover:shadow-md"
+                            ? "border-[var(--red-90)] bg-white" 
+                            : "border-[var(--gray-30)] bg-white hover:border-[var(--red-90)]"
                         )}
                       >
-                        <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-primary/10 to-transparent" />
+                        <div className="absolute inset-x-6 top-0 h-px" style={{ backgroundColor: 'transparent' }} />
                         
                         <div className="relative">
                           <div className="flex items-center gap-2 mb-4">
                             <div className={cn(
-                              "w-1.5 h-1.5 rounded-full transition-all duration-300",
+                              "w-1.5 h-1.5 transition-all duration-300",
                               activeCase === case_.id 
-                                ? "bg-primary" 
-                                : "bg-primary/40 group-hover/case:bg-primary/60"
+                                ? "bg-[var(--red-90)]" 
+                                : "bg-[var(--red-70)] group-hover/case:bg-[var(--red-80)]"
                             )} />
-                            <span className="text-sm font-medium text-primary/80">
+                            <span className="text-sm font-medium" style={{ color: activeCase === case_.id ? 'var(--red-90)' : 'var(--text-02)' }}>
                               {case_.industry}
                             </span>
                           </div>
@@ -227,12 +227,12 @@ export default function CaseStudiesSection() {
                           <h4 className={cn(
                             "text-xl font-medium mb-3 transition-colors pl-3.5",
                             activeCase === case_.id 
-                              ? "text-primary" 
-                              : "group-hover/case:text-primary"
+                              ? "text-[var(--red-90)]" 
+                              : "group-hover/case:text-[var(--red-90)]"
                           )}>
                             {case_.title}
                           </h4>
-                          <p className="text-sm text-muted-foreground line-clamp-2 mb-4 pl-3.5">
+                          <p className="text-sm line-clamp-2 mb-4 pl-3.5" style={{ color: 'var(--text-02)' }}>
                             {case_.context}
                           </p>
                           <div className="flex items-center justify-between border-t pt-4 pl-3.5">

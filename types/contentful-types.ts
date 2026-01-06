@@ -34,3 +34,9 @@ export interface SpecializedUnit {
   valueProp: string;
   techAssets: string[];
 }
+
+// The "How" (Unit)
+export interface Unit extends SpecializedUnit {
+  subtitle: string;
+  services: string[];
+}

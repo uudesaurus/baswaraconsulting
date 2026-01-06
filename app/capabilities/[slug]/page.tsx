@@ -11,8 +11,9 @@ export function generateStaticParams() {
   }))
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const capability = CAPABILITIES.find((c) => c.slug === params.slug)
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  const { slug } = await params
+  const capability = CAPABILITIES.find((c) => c.slug === slug)
   
   if (!capability) {
     return {
@@ -26,8 +27,9 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   }
 }
 
-export default function CapabilityPage({ params }: { params: { slug: string } }){
-  const capability = CAPABILITIES.find((c) => c.slug === params.slug)
+export default async function CapabilityPage({ params }: { params: { slug: string } }){
+  const { slug } = await params
+  const capability = CAPABILITIES.find((c) => c.slug === slug)
   if (!capability) return notFound()
 
   // Find Industries where this capability is applied
@@ -82,11 +84,11 @@ export default function CapabilityPage({ params }: { params: { slug: string } })
               {capability.serviceSuite.map((service, idx) => (
                 <div
                   key={idx}
-                  className="group bg-gradient-to-br from-slate-50 to-white p-8 rounded-xl border-2 border-slate-200 hover:border-primary hover:shadow-lg transition-all"
+                  className="group p-8 border border-[var(--gray-30)] bg-white transition-all duration-200 hover:border-[var(--red-90)] hover:shadow-[0_4px_8px_rgba(196,30,58,0.1)]"
                 >
                   <div className="flex items-start gap-4 mb-4">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
-                      <CheckCircle2 className="h-5 w-5 text-primary group-hover:text-white" />
+                    <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center group-hover:bg-red-90 transition-colors" style={{ border: '1px solid var(--gray-30)', backgroundColor: 'var(--ui-02)' }}>
+                      <CheckCircle2 className="h-6 w-6" style={{ color: 'var(--red-90)' }} />
                     </div>
                     <div className="flex-1">
                       <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">

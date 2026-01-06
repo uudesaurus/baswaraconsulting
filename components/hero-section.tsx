@@ -1,75 +1,183 @@
-"use client"
+"use client";
 
-import { useEffect, useRef } from "react"
-import ClientMarquee from "@/components/client-marquee"
+import { useEffect, useRef } from "react";
+import Link from "next/link";
+import ClientMarquee from "@/components/client-marquee";
 
 export default function HeroSection() {
-  const heroRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!heroRef.current) return
-
-      const { clientX, clientY } = e
-      const { innerWidth, innerHeight } = window
-
-      const moveX = ((clientX - innerWidth / 2) / innerWidth) * 20
-      const moveY = ((clientY - innerHeight / 2) / innerHeight) * 20
-
-      const elements = heroRef.current.querySelectorAll(".parallax")
-      elements.forEach((el) => {
-        const speed = Number.parseFloat((el as HTMLElement).dataset.speed || "1")
-        ;(el as HTMLElement).style.transform = `translate(${moveX * speed}px, ${moveY * speed}px)`
-      })
-    }
-
-    window.addEventListener("mousemove", handleMouseMove)
-    return () => window.removeEventListener("mousemove", handleMouseMove)
-  }, [])
+  const heroRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section ref={heroRef} className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/20 rounded-full blur-[100px]" />
-        <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-accent/20 rounded-full blur-[100px]" />
+    <section
+      ref={heroRef}
+      style={{
+        backgroundColor: "white",
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "flex-start",
+        justifyContent: "center",
+        position: "relative",
+        overflow: "hidden",
+        paddingTop: "calc(52px + var(--spacing-09))",
+        paddingBottom: "var(--spacing-14)",
+        paddingLeft: "var(--spacing-07)",
+        paddingRight: "var(--spacing-07)",
+      }}
+    >
+      {/* IBM-style grid background */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          opacity: 0.02,
+          backgroundImage:
+            "linear-gradient(90deg, #000 1px, transparent 1px), linear-gradient(#000 1px, transparent 1px)",
+          backgroundSize: "48px 48px",
+          pointerEvents: "none",
+        }}
+      />
+
+      {/* Minimal accent shapes */}
+      <div
+        style={{
+          position: "absolute",
+          top: "15%",
+          right: "8%",
+          width: "280px",
+          height: "280px",
+          backgroundColor: "black",
+          opacity: 0.04,
+          pointerEvents: "none",
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          bottom: "10%",
+          left: "5%",
+          width: "250px",
+          height: "250px",
+          backgroundColor: "var(--red-90)",
+          opacity: 0.05,
+          pointerEvents: "none",
+        }}
+      />
+
+      <div
+        style={{
+          maxWidth: "1000px",
+          width: "100%",
+          position: "relative",
+          zIndex: 10,
+        }}
+      >
+        {/* Tagline */}
         <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] border border-accent/20 rounded-full parallax"
-          data-speed="0.5"
-        />
+          style={{
+            display: "inline-block",
+            padding: "8px 12px",
+            marginBottom: "var(--spacing-07)",
+            backgroundColor: "transparent",
+            border: "1px solid #ccc",
+            color: "black",
+            fontSize: "12px",
+            fontWeight: 500,
+            letterSpacing: "0.5px",
+            textTransform: "uppercase",
+          }}
+        >
+          ← Transforming Industries & Systems
+        </div>
+
+        {/* Main heading */}
+        <h1
+          style={{
+            fontSize: "64px",
+            lineHeight: "72px",
+            fontWeight: 700,
+            color: "black",
+            marginBottom: "var(--spacing-06)",
+            maxWidth: "900px",
+            letterSpacing: "-1px",
+          }}
+        >
+          Multisectoral Insight.<br />Global Execution.
+        </h1>
+
+        {/* Subheading */}
+        <p
+          style={{
+            fontSize: "18px",
+            lineHeight: "28px",
+            color: "#525252",
+            marginBottom: "var(--spacing-09)",
+            maxWidth: "700px",
+            fontWeight: 400,
+          }}
+        >
+          Baswara Consulting brings 26+ years of experience across global industry
+          and national health reform into integrated, actionable strategy.
+        </p>
+
+        {/* CTA Buttons */}
         <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] border border-primary/20 rounded-full parallax"
-          data-speed="0.3"
-        />
-        <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-accent/10 rounded-full parallax"
-          data-speed="0.1"
-        />
+          style={{
+            display: "flex",
+            gap: "var(--spacing-04)",
+            marginBottom: "var(--spacing-11)",
+            flexWrap: "wrap",
+          }}
+        >
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center px-6 h-12 text-sm font-600 text-white bg-black hover:bg-gray-900 transition-colors rounded"
+            style={{
+              textDecoration: "none",
+              cursor: "pointer",
+              border: "none",
+            }}
+          >
+            Book Intro Call
+          </Link>
+          <Link
+            href="/insights"
+            className="inline-flex items-center justify-center px-6 h-12 text-sm font-600 text-black border border-gray-300 bg-white hover:bg-gray-50 transition-colors rounded"
+            style={{
+              textDecoration: "none",
+              cursor: "pointer",
+            }}
+          >
+            Explore Insights
+          </Link>
+        </div>
       </div>
 
-      <div className="container relative z-10">
-        <div className="max-w-3xl mx-auto text-center space-y-8">
-          <div className="inline-block px-4 py-1.5 bg-accent/10 rounded-full mb-6 animate-fade-up [animation-delay:200ms] opacity-0">
-            <span className="text-sm font-medium text-accent">Transforming Industries & Systems</span>
-          </div>
-
-          <h1 className="animate-fade-up [animation-delay:300ms] opacity-0">
-            <span className="gradient-text">Multisectoral Insight.</span> <br />
-            Global Execution.
-          </h1>
-
-          <p className="text-xl text-muted-foreground animate-fade-up [animation-delay:400ms] opacity-0">
-            Baswara Consulting brings 26+ years of experience across global industry and national health reform into
-            integrated, actionable strategy.
-          </p>
-
-        </div>
-
-        <div className="mt-20 animate-fade-up [animation-delay:600ms] opacity-0">
-          <p className="text-center text-sm text-muted-foreground mb-6">Trusted by leading organizations worldwide</p>
-          <ClientMarquee />
-        </div>
+      {/* Client logos */}
+      <div
+        style={{
+          width: "100%",
+          paddingTop: "var(--spacing-09)",
+          borderTop: "1px solid var(--gray-30)",
+          position: "relative",
+          zIndex: 10,
+        }}
+      >
+        <p
+          style={{
+            textAlign: "center",
+            fontSize: "12px",
+            color: "var(--text-02)",
+            marginBottom: "var(--spacing-06)",
+            textTransform: "uppercase",
+            letterSpacing: "0.5px",
+            fontWeight: 500,
+          }}
+        >
+          Trusted by leading organizations worldwide
+        </p>
+        <ClientMarquee />
       </div>
     </section>
-  )
+  );
 }

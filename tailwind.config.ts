@@ -19,6 +19,21 @@ const config = {
       },
     },
     extend: {
+      spacing: {
+        /* IBM Carbon spacing scale (8px base) */
+        1: "4px",    /* --spacing-01 */
+        2: "8px",    /* --spacing-02 */
+        3: "12px",   /* --spacing-03 */
+        4: "16px",   /* --spacing-04 */
+        5: "20px",   /* --spacing-05 */
+        6: "24px",   /* --spacing-06 */
+        7: "32px",   /* --spacing-07 */
+        8: "40px",   /* --spacing-08 */
+        9: "48px",   /* --spacing-09 */
+        10: "56px",  /* --spacing-10 */
+        11: "64px",  /* --spacing-11 */
+        12: "72px",  /* --spacing-12 */
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -55,9 +70,11 @@ const config = {
         },
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        /* IBM Sharp aesthetic - no rounded corners */
+        none: "0px",
+        lg: "0px",
+        md: "0px",
+        sm: "0px",
       },
       fontFamily: {
         sans: ["var(--font-sans)"],

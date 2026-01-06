@@ -38,52 +38,115 @@ export default function Navbar() {
 
   return (
     <header
-      className={cn(
-        "fixed top-0 w-full z-50 transition-all duration-300",
-        scrolled ? "bg-white/95 backdrop-blur-md py-3 shadow-sm border-b" : "bg-white py-4 border-b",
-      )}
+      className="fixed top-0 w-full z-[9000] border-b border-gray-200"
+      style={{
+        backgroundColor: 'white',
+        height: '52px',
+        display: 'flex',
+        alignItems: 'center',
+        boxShadow: '0 1px 0 rgba(0,0,0,0.08)',
+      }}
     >
-      <div className="container flex items-center justify-between">
-        <Link href="/" className="flex items-center space-x-2">
-          <span className="text-lg font-bold gradient-text">BASWARA</span>
-          <span className="text-lg font-medium text-muted-foreground">CONSULTING</span>
+      <div className="container flex items-center justify-between h-full px-[var(--spacing-07)]">
+        <Link 
+          href="/" 
+          className="flex items-center gap-2 h-full flex-shrink-0"
+          style={{
+            textDecoration: 'none',
+            color: 'black',
+          }}
+        >
+          <span 
+            className="font-bold"
+            style={{
+              fontSize: '14px',
+              lineHeight: '18px',
+              fontWeight: 700,
+              color: 'black',
+              letterSpacing: '0.5px',
+            }}
+          >
+            BASWARA
+          </span>
+          <span 
+            style={{
+              fontSize: '13px',
+              lineHeight: '18px',
+              fontWeight: 400,
+              color: 'black',
+            }}
+          >
+            CONSULTING
+          </span>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center space-x-1">
+        <nav 
+          className="hidden lg:flex items-center h-full"
+          style={{
+            gap: 'var(--spacing-01)',
+          }}
+        >
           {/* Capabilities Dropdown */}
           <div
-            className="relative"
+            className="relative h-full flex items-center"
             onMouseEnter={() => handleMouseEnter("capabilities")}
             onMouseLeave={handleMouseLeave}
           >
-            <button className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+            <button 
+              className="flex items-center gap-1 px-3 py-2 text-sm font-500 text-black bg-transparent hover:bg-gray-100 transition-colors rounded"
+              style={{
+                border: 'none',
+                cursor: 'pointer',
+              }}
+            >
               Capabilities
               <ChevronDown className="h-3 w-3" />
             </button>
             
             {activeDropdown === "capabilities" && (
-              <div className="absolute left-0 top-full pt-2 w-[520px]">
-                <div className="bg-white rounded-lg shadow-xl border p-6">
-                  <div className="mb-4">
+              <div 
+                className="absolute left-0 top-full"
+                style={{
+                  marginTop: 0,
+                  width: '520px',
+                  zIndex: 'var(--z-index-dropdown)',
+                }}
+              >
+                <div 
+                  style={{
+                    backgroundColor: 'var(--ui-01)',
+                    border: '1px solid var(--gray-30)',
+                    padding: 'var(--spacing-06)',
+                  }}
+                >
+                  <div style={{ marginBottom: 'var(--spacing-04)' }}>
                     <Link 
                       href="/capabilities"
-                      className="text-xs font-semibold text-primary uppercase tracking-wider hover:underline"
+                      style={{
+                        fontSize: '12px',
+                        fontWeight: 600,
+                        color: 'var(--interactive-01)',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.5px',
+                        textDecoration: 'none',
+                      }}
                     >
                       View All Capabilities →
                     </Link>
                   </div>
-                  <div className="grid grid-cols-2 gap-3">
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--spacing-03)' }}>
                     {CAPABILITIES.map((capability) => (
                       <Link
                         key={capability.slug}
                         href={`/capabilities/${capability.slug}`}
-                        className="group p-3 rounded-md hover:bg-slate-50 transition-colors"
+                        className="block px-[var(--spacing-04)] py-[var(--spacing-04)] transition-all duration-150 border-l-2 border-transparent hover:border-[var(--red-90)] hover:bg-[var(--gray-20)]"
+                        style={{ textDecoration: 'none', color: 'inherit' }}
                       >
-                        <div className="font-semibold text-sm mb-1 group-hover:text-primary transition-colors">
+                        <div style={{ fontWeight: 600, fontSize: '14px', marginBottom: '4px', color: 'var(--text-01)' }}>
                           {capability.name}
                         </div>
-                        <div className="text-xs text-muted-foreground line-clamp-2">
+                        <div style={{ fontSize: '12px', color: 'var(--text-02)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                           {capability.headline}
                         </div>
                       </Link>
@@ -96,43 +159,81 @@ export default function Navbar() {
 
           {/* Industries Dropdown */}
           <div
-            className="relative"
+            className="relative h-full flex items-center"
             onMouseEnter={() => handleMouseEnter("industries")}
             onMouseLeave={handleMouseLeave}
           >
-            <button className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+            <button 
+              className="flex items-center gap-1 px-3 py-2 text-sm font-500 text-black bg-transparent hover:bg-gray-100 transition-colors rounded"
+              style={{
+                border: 'none',
+                cursor: 'pointer',
+              }}
+            >
               Industries
               <ChevronDown className="h-3 w-3" />
             </button>
             
             {activeDropdown === "industries" && (
-              <div className="absolute left-0 top-full pt-2 w-[720px]">
-                <div className="bg-white rounded-lg shadow-xl border p-6">
-                  <div className="mb-4">
+              <div 
+                className="absolute left-0 top-full"
+                style={{
+                  marginTop: 0,
+                  width: '720px',
+                  zIndex: 'var(--z-index-dropdown)',
+                }}
+              >
+                <div 
+                  style={{
+                    backgroundColor: 'var(--ui-01)',
+                    border: '1px solid var(--gray-30)',
+                    padding: 'var(--spacing-06)',
+                  }}
+                >
+                  <div style={{ marginBottom: 'var(--spacing-04)' }}>
                     <Link 
                       href="/industries"
-                      className="text-xs font-semibold text-primary uppercase tracking-wider hover:underline"
+                      style={{
+                        fontSize: '12px',
+                        fontWeight: 600,
+                        color: 'var(--interactive-01)',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.5px',
+                        textDecoration: 'none',
+                      }}
                     >
                       View All Industries →
                     </Link>
                   </div>
-                  <div className="grid grid-cols-3 gap-6">
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 'var(--spacing-06)' }}>
                     {Object.entries(industryGroups).map(([cluster, industries]) => (
                       <div key={cluster}>
-                        <div className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-3 pb-2 border-b">
+                        <div 
+                          style={{
+                            fontSize: '12px',
+                            fontWeight: 600,
+                            color: 'var(--text-01)',
+                            textTransform: 'uppercase',
+                            letterSpacing: '0.5px',
+                            marginBottom: 'var(--spacing-03)',
+                            paddingBottom: 'var(--spacing-02)',
+                            borderBottom: '1px solid var(--gray-30)',
+                          }}
+                        >
                           {cluster}
                         </div>
-                        <div className="space-y-2">
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-02)' }}>
                           {industries.map((industry) => (
                             <Link
                               key={industry.slug}
                               href={`/industries/${industry.slug}`}
-                              className="group block p-2 rounded-md hover:bg-slate-50 transition-colors"
+                              className="block px-[var(--spacing-02)] py-[var(--spacing-03)] transition-all duration-150 border-l-2 border-transparent hover:border-[var(--red-90)] hover:bg-[var(--gray-20)]"
+                              style={{ textDecoration: 'none', color: 'inherit' }}
                             >
-                              <div className="font-semibold text-sm mb-0.5 group-hover:text-primary transition-colors">
+                              <div style={{ fontWeight: 600, fontSize: '14px', marginBottom: '2px', color: 'var(--text-01)' }}>
                                 {industry.name}
                               </div>
-                              <div className="text-xs text-muted-foreground">
+                              <div style={{ fontSize: '12px', color: 'var(--text-02)' }}>
                                 {industry.coreServices[0]}
                               </div>
                             </Link>
@@ -149,7 +250,8 @@ export default function Navbar() {
           {/* Units Link */}
           <Link
             href="/units"
-            className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            className="flex items-center px-[var(--spacing-04)] h-full text-[var(--text-01)] transition-colors hover:bg-[var(--gray-10)]"
+            style={{ textDecoration: 'none', fontSize: '14px', fontWeight: 500 }}
           >
             Specialized Units
           </Link>
@@ -157,7 +259,8 @@ export default function Navbar() {
           {/* Insights Link */}
           <Link
             href="/insights"
-            className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            className="flex items-center px-[var(--spacing-04)] h-full text-[var(--text-01)] transition-colors hover:bg-[var(--gray-10)]"
+            style={{ textDecoration: 'none', fontSize: '14px', fontWeight: 500 }}
           >
             Insights
           </Link>
@@ -165,7 +268,8 @@ export default function Navbar() {
           {/* About Link */}
           <Link
             href="/about"
-            className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            className="flex items-center px-[var(--spacing-04)] h-full text-[var(--text-01)] transition-colors hover:bg-[var(--gray-10)]"
+            style={{ textDecoration: 'none', fontSize: '14px', fontWeight: 500 }}
           >
             About
           </Link>
@@ -173,15 +277,20 @@ export default function Navbar() {
           {/* Career Link */}
           <Link
             href="/career"
-            className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            className="flex items-center px-[var(--spacing-04)] h-full text-[var(--text-01)] transition-colors hover:bg-[var(--gray-10)]"
+            style={{ textDecoration: 'none', fontSize: '14px', fontWeight: 500 }}
           >
             Career
           </Link>
 
-          {/* CTA Button */}
-          <Button variant="default" size="sm" className="ml-2" asChild>
-            <Link href="/contact">Book Intro Call</Link>
-          </Button>
+          {/* CTA Button - IBM style primary action */}
+          <Link
+            href="/contact"
+            className="flex items-center justify-center px-5 h-9 ml-6 text-sm font-600 text-white bg-black hover:bg-gray-900 transition-colors rounded"
+            style={{ textDecoration: 'none', border: 'none' }}
+          >
+            Book Intro Call
+          </Link>
         </nav>
 
         {/* Mobile Navigation */}

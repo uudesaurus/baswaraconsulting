@@ -1,6 +1,6 @@
+"use client";
+
 import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
 import Link from "next/link"
 
 const insights = [
@@ -18,47 +18,110 @@ const insights = [
 
 export default function InsightsSection() {
   return (
-    <section className="py-24">
-      <div className="container">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16">
-          <div>
-            <h2 className="text-3xl font-bold mb-4">Thought Leadership</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl">
+    <section
+      style={{
+        backgroundColor: 'var(--ui-background)',
+        paddingTop: 'var(--spacing-11)',
+        paddingBottom: 'var(--spacing-11)',
+        borderTop: '1px solid var(--gray-30)',
+      }}
+    >
+      <div
+        style={{
+          maxWidth: '1200px',
+          margin: '0 auto',
+          padding: '0 var(--spacing-07)',
+        }}
+      >
+        <div
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            alignItems: 'flex-end',
+            justifyContent: 'space-between',
+            gap: 'var(--spacing-04)',
+            marginBottom: 'var(--spacing-09)',
+          }}
+        >
+          <div style={{ maxWidth: '720px' }}>
+            <h2 style={{ fontSize: '42px', lineHeight: '50px', fontWeight: 600, color: 'var(--text-01)', marginBottom: 'var(--spacing-03)' }}>
+              Thought Leadership
+            </h2>
+            <p style={{ fontSize: '18px', lineHeight: '28px', color: 'var(--text-02)' }}>
               Explore our latest research, analysis, and insights on industry trends and best practices.
             </p>
           </div>
-          <Button variant="outline" asChild className="mt-4 md:mt-0">
-            <Link href="/insights">
-              View All Insights <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
+
+          <Link
+            href="/insights"
+            className="inline-flex items-center justify-center px-[var(--spacing-06)] h-12 text-sm font-semibold text-[var(--text-01)] border border-[var(--gray-30)] bg-white transition-all duration-200 hover:border-[var(--red-90)] hover:bg-[var(--red-50)]"
+            style={{
+              textDecoration: 'none',
+            }}
+          >
+            View All Insights →
+          </Link>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gap: 'var(--spacing-06)',
+          }}
+        >
           {insights.map((insight) => (
-            <div key={insight.id} className="group">
-              <Link href={`/insights/${insight.slug}`} className="block">
-                <div className="relative h-60 mb-6 overflow-hidden rounded-lg">
-                  <Image
-                    src={insight.image}
-                    alt={insight.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute top-4 left-4 px-3 py-1 bg-accent/90 rounded-full text-xs font-medium text-background">
-                    {insight.category}
-                  </div>
+            <Link
+              key={insight.id}
+              href={`/insights/${insight.slug}`}
+              className="group flex flex-col gap-[var(--spacing-04)] border border-[var(--gray-30)] bg-white p-[var(--spacing-06)] text-inherit transition-all duration-200 hover:border-[var(--red-90)] hover:shadow-[0_4px_8px_rgba(196,30,58,0.1)]"
+              style={{
+                textDecoration: 'none',
+              }}
+            >
+              <div style={{ position: 'relative', height: '180px', overflow: 'hidden', backgroundColor: 'var(--gray-10)' }}>
+                <Image
+                  src={insight.image}
+                  alt={insight.title}
+                  fill
+                  style={{ objectFit: 'cover' }}
+                />
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: 'var(--spacing-03)',
+                    left: 'var(--spacing-03)',
+                    padding: 'var(--spacing-01) var(--spacing-03)',
+                    backgroundColor: 'var(--ui-02)',
+                    border: '1px solid var(--gray-30)',
+                    fontSize: '12px',
+                    fontWeight: 600,
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.4px',
+                  }}
+                >
+                  {insight.category}
                 </div>
-                <div className="space-y-3">
-                  <div className="text-sm text-muted-foreground">{insight.date}</div>
-                  <h3 className="text-xl font-medium group-hover:text-accent transition-colors">{insight.title}</h3>
-                  <p className="text-muted-foreground">{insight.excerpt}</p>
-                  <div className="pt-2 text-sm font-medium text-accent flex items-center">
-                    Read More <ArrowRight className="ml-2 h-3 w-3" />
-                  </div>
-                </div>
-              </Link>
-            </div>
+              </div>
+
+              <div style={{ display: 'flex', gap: 'var(--spacing-02)', alignItems: 'center', color: 'var(--text-02)', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.4px' }}>
+                <span>{insight.date}</span>
+                <span>•</span>
+                <span>{insight.readTime}</span>
+              </div>
+
+              <h3 style={{ fontSize: '18px', lineHeight: '24px', fontWeight: 600, color: 'var(--text-01)' }}>
+                {insight.title}
+              </h3>
+
+              <p style={{ fontSize: '14px', lineHeight: '20px', color: 'var(--text-02)' }}>
+                {insight.excerpt}
+              </p>
+
+              <div style={{ display: 'flex', alignItems: 'center', gap: '4px', color: 'var(--red-90)', fontWeight: 600, fontSize: '14px', marginTop: 'auto' }}>
+                Read More →
+              </div>
+            </Link>
           ))}
         </div>
       </div>

@@ -124,8 +124,8 @@ export function ContactForm() {
   }
 
   return (
-    <div className="bg-card p-8 rounded-lg border sticky top-24">
-      <h2 className="text-2xl font-semibold mb-6">Book an Intro Call</h2>
+    <div className="p-8 border" style={{ backgroundColor: 'var(--ui-02)', borderColor: 'var(--gray-30)', position: 'sticky', top: '96px' }}>
+      <h2 className="text-2xl font-semibold mb-6" style={{ color: 'var(--text-01)' }}>Book an Intro Call</h2>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           <div className="grid md:grid-cols-2 gap-6">
@@ -254,7 +254,7 @@ export function ContactForm() {
             )}
           />
 
-          <Button type="submit" className="w-full">Schedule Call</Button>
+          <Button type="submit" className="w-full" style={{ backgroundColor: 'var(--red-90)', color: 'white', border: 'none', fontWeight: 500 }}>Schedule Call</Button>
         </form>
       </Form>
     </div>

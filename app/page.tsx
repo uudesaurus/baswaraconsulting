@@ -1,5 +1,5 @@
 import HeroSection from "@/components/hero-section"
-import ServicesSection from "@/components/services-section"
+import ServicesSection from "@/components/services-section-ibm"
 import StatsSection from "@/components/stats-section"
 import AboutSection from "@/components/about-section"
 import CaseStudiesSection from "@/components/case-studies-section"

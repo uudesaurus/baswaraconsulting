@@ -14,44 +14,30 @@ export default function CTASection() {
   }
 
   return (
-    <section className="py-24 md:py-32 relative overflow-hidden">
-      {/* Simple gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-secondary/10" />
-      
-      {/* Subtle mesh gradient */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[100px]" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-[100px]" />
-      </div>
-
-      <div className="container relative z-10 max-w-5xl">
+    <section className="py-24 md:py-32 bg-white" style={{ borderTop: '1px solid var(--gray-30)', borderBottom: '1px solid var(--gray-30)' }}>
+      <div className="container max-w-5xl">
         <div className="max-w-3xl mx-auto text-center space-y-8">
           <div className="space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-              Ready to Drive{" "}
-              <span className="relative inline-block">
-                <span className="relative z-10 gradient-text">Real Impact</span>
-                <span className="absolute inset-x-0 bottom-0 h-3 bg-primary/10 -skew-x-12 transform" />
-              </span>
-              ?
+            <h2 className="text-4xl md:text-5xl font-bold leading-tight" style={{ color: 'var(--text-01)' }}>
+              Ready to Drive Real Impact?
             </h2>
-            <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+            <p className="text-xl leading-relaxed max-w-2xl mx-auto" style={{ color: 'var(--text-02)' }}>
               Schedule a free 30-minute intro call. Let's discuss your challenges and explore how our proven strategies can help achieve your goals.
             </p>
           </div>
 
           <div className="space-y-6">
-            <div className="flex flex-wrap justify-center gap-6 text-base text-muted-foreground">
+            <div className="flex flex-wrap justify-center gap-6 text-base" style={{ color: 'var(--text-02)' }}>
               <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-primary/50" />
+                <span className="w-2 h-2" style={{ backgroundColor: 'var(--red-90)' }} />
                 <span>No Commitment Required</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-primary/50" />
+                <span className="w-2 h-2" style={{ backgroundColor: 'var(--red-90)' }} />
                 <span>Personalized Discussion</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-primary/50" />
+                <span className="w-2 h-2" style={{ backgroundColor: 'var(--red-90)' }} />
                 <span>Clear Next Steps</span>
               </div>
             </div>
@@ -60,6 +46,7 @@ export default function CTASection() {
               <Button 
                 size="lg" 
                 className="min-w-[280px] h-12 text-base" 
+                style={{ backgroundColor: 'var(--red-90)', color: 'white', border: 'none', fontWeight: 500 }}
                 asChild
               >
                 <Link href="/contact?type=intro">
