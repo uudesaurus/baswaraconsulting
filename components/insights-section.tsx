@@ -22,7 +22,7 @@ export default function InsightsSection() {
       <div className="container">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16">
           <div>
-            <h2 className="text-3xl font-bold mb-4">Thought Leadership</h2>
+            <h2 className="text-3xl  mb-4">Thought Leadership</h2>
             <p className="text-xl text-muted-foreground max-w-2xl">
               Explore our latest research, analysis, and insights on industry trends and best practices.
             </p>
@@ -45,15 +45,15 @@ export default function InsightsSection() {
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute top-4 left-4 px-3 py-1 bg-accent/90 rounded-full text-xs font-medium text-background">
+                  <div className="absolute top-4 left-4 px-3 py-1 bg-accent/90 rounded-full text-xs  text-background">
                     {insight.category}
                   </div>
                 </div>
                 <div className="space-y-3">
                   <div className="text-sm text-muted-foreground">{insight.date}</div>
-                  <h3 className="text-xl font-medium group-hover:text-accent transition-colors">{insight.title}</h3>
+                  <h3 className="text-xl  group-hover:text-accent transition-colors">{insight.title}</h3>
                   <p className="text-muted-foreground">{insight.excerpt}</p>
-                  <div className="pt-2 text-sm font-medium text-accent flex items-center">
+                  <div className="pt-2 text-sm  text-accent flex items-center">
                     Read More <ArrowRight className="ml-2 h-3 w-3" />
                   </div>
                 </div>

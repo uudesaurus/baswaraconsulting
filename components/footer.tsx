@@ -1,94 +1,126 @@
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Linkedin, Mail, MapPin } from "lucide-react"
+import { cn } from "@/lib/utils"
 
 export default function Footer() {
   return (
-    <footer className="bg-secondary py-16">
-      <div className="container grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-        <div className="space-y-4">
-          <div className="flex items-center space-x-2">
-            <span className="font-heading text-2xl font-bold gradient-text">BASWARA</span>
-            <span className="text-sm font-medium text-muted-foreground">CONSULTING</span>
-          </div>
-          <p className="text-muted-foreground text-sm">Multisectoral Insight. Global Execution.</p>
-          <div className="flex space-x-4">
-            <Button variant="ghost" size="icon" asChild>
-              <Link href="https://www.linkedin.com/company/baswaraconsulting/posts/?feedView=all" aria-label="LinkedIn">
-                <Linkedin className="h-5 w-5" />
-              </Link>
-            </Button>
-            <Button variant="ghost" size="icon" asChild>
-              <Link href="mailto:office@baswaraconsulting.com" aria-label="Email">
-                <Mail className="h-5 w-5" />
-              </Link>
-            </Button>
-            <Button variant="ghost" size="icon" asChild>
-              <Link href="/contact" aria-label="Location">
-                <MapPin className="h-5 w-5" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-
-        <div>
-          <h4 className="font-medium text-lg mb-4">Quick Links</h4>
-          <ul className="space-y-2">
-            <li>
-              <Link href="/about" className="text-muted-foreground hover:text-foreground transition-colors">
-                About Us
-              </Link>
-            </li>
-            <li>
-              <Link href="/services" className="text-muted-foreground hover:text-foreground transition-colors">
-                Services
-              </Link>
-            </li>
-            <li>
-              <Link href="/credentials" className="text-muted-foreground hover:text-foreground transition-colors">
-                Case Studies
-              </Link>
-            </li>
-            <li>
-              <Link href="/insights" className="text-muted-foreground hover:text-foreground transition-colors">
-                Thought Leadership
-              </Link>
-            </li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 className="font-medium text-lg mb-4">Contact</h4>
-          <address className="not-italic text-muted-foreground">
-            <p className="mt-2">
-              <a href="mailto:office@baswaraconsulting.com" className="hover:text-foreground transition-colors">
-                office@baswaraconsulting.com
-              </a>
+    <footer className="relative bg-gradient-to-b from-[#1A1C1E] via-[#0F1113] to-[#050505] text-white py-20 overflow-hidden">
+      {/* Subtle Grid Pattern Overlay */}
+      <div 
+        className="absolute inset-0 opacity-[0.04]" 
+        style={{
+          backgroundImage: `linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)`,
+          backgroundSize: '40px 40px'
+        }}
+      />
+      
+      <div className="container relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+          {/* Brand and Description */}
+          <div className="md:col-span-4 space-y-8">
+            <Link href="/" className="inline-block group">
+              <span className="text-3xl tracking-tight">
+                Baswara<span className="text-[#C41230]">.</span>
+              </span>
+            </Link>
+            
+            <p className="text-slate-400 text-lg leading-relaxed max-w-sm">
+              Bridging high-level strategy and operational reality across Indonesia's most critical industries.
             </p>
-          </address>
+          </div>
+
+          {/* Navigation Columns */}
+          <div className="md:col-span-3">
+            <h4 className="text-white text-lg mb-6">Capabilities</h4>
+            <ul className="space-y-4">
+              <li>
+                <Link href="/capabilities/strategy" className="text-slate-400 hover:text-white transition-colors">
+                  Strategy & Transformation
+                </Link>
+              </li>
+              <li>
+                <Link href="/capabilities/operations" className="text-slate-400 hover:text-white transition-colors">
+                  Operations & Supply Chain
+                </Link>
+              </li>
+              <li>
+                <Link href="/capabilities/digital" className="text-slate-400 hover:text-white transition-colors">
+                  Digital & Technology
+                </Link>
+              </li>
+              <li>
+                <Link href="/capabilities/finance" className="text-slate-400 hover:text-white transition-colors">
+                  Corporate Finance
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div className="md:col-span-3">
+            <h4 className="text-white text-lg mb-6">Industries</h4>
+            <ul className="space-y-4">
+              <li>
+                <Link href="/industries/mining" className="text-slate-400 hover:text-white transition-colors">
+                  Mining & Metals
+                </Link>
+              </li>
+              <li>
+                <Link href="/industries/agro" className="text-slate-400 hover:text-white transition-colors">
+                  Agribusiness
+                </Link>
+              </li>
+              <li>
+                <Link href="/industries/finance" className="text-slate-400 hover:text-white transition-colors">
+                  Financial Services
+                </Link>
+              </li>
+              <li>
+                <Link href="/industries/ict" className="text-slate-400 hover:text-white transition-colors">
+                  ICT & Digital
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div className="md:col-span-2">
+            <h4 className="text-white text-lg mb-6">Company</h4>
+            <ul className="space-y-4">
+              <li>
+                <Link href="/about" className="text-slate-400 hover:text-white transition-colors">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/insights" className="text-slate-400 hover:text-white transition-colors">
+                  Insights
+                </Link>
+              </li>
+              <li>
+                <Link href="/career" className="text-slate-400 hover:text-white transition-colors">
+                  Careers
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-slate-400 hover:text-white transition-colors">
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div>
-          <h4 className="font-medium text-lg mb-4">Newsletter</h4>
-          <p className="text-muted-foreground text-sm mb-4">Subscribe to receive our latest insights and updates.</p>
-          <form className="flex flex-col sm:flex-row gap-2">
-            <Input type="email" placeholder="Your email" className="bg-background/20" />
-            <Button type="submit">Subscribe</Button>
-          </form>
-        </div>
-      </div>
-
-      <div className="container mt-16 pt-8 border-t border-border/30">
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Ayah Consulting. All rights reserved.
-          </p>
-          <div className="flex gap-4 text-sm text-muted-foreground">
-            <Link href="/privacy" className="hover:text-foreground transition-colors">
+        {/* Bottom Bar */}
+        <div className="pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="w-full md:w-auto">
+            <p className="text-slate-500 text-sm">
+              © {new Date().getFullYear()} Baswara Partner. All rights reserved.
+            </p>
+          </div>
+          
+          <div className="flex flex-wrap justify-center md:justify-end gap-x-8 gap-y-2 text-slate-500 text-sm">
+            <Link href="/privacy" className="hover:text-slate-300 transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="hover:text-foreground transition-colors">
+            <Link href="/terms" className="hover:text-slate-300 transition-colors">
               Terms of Service
             </Link>
           </div>

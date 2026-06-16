@@ -59,11 +59,11 @@ export default function UnitPage({ params }: { params: { slug: string } }) {
               <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-white/20 backdrop-blur-sm">
                 <Icon className="h-7 w-7" />
               </div>
-              <div className="text-sm font-semibold text-white/80 uppercase tracking-wider">
+              <div className="text-sm  text-white/80 uppercase tracking-wider">
                 {unit.role}
               </div>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">{unit.name}</h1>
+            <h1 className="text-4xl md:text-6xl  mb-6">{unit.name}</h1>
             <p className="text-xl md:text-2xl opacity-90 mb-4 leading-relaxed">
               {unit.hook}
             </p>
@@ -83,7 +83,7 @@ export default function UnitPage({ params }: { params: { slug: string } }) {
       <section className="py-20 bg-white">
         <div className="container">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">What We Build</h2>
+            <h2 className="text-3xl md:text-4xl  mb-4">What We Build</h2>
             <p className="text-lg text-muted-foreground mb-12">
               Our core offerings are designed to deliver tangible, measurable results
             </p>
@@ -94,10 +94,10 @@ export default function UnitPage({ params }: { params: { slug: string } }) {
                   key={idx}
                   className="bg-gradient-to-br from-slate-50 to-white p-6 rounded-xl border-2 border-slate-200 hover:border-primary hover:shadow-lg transition-all"
                 >
-                  <div className="text-4xl font-bold text-primary/20 mb-4">
+                  <div className="text-4xl  text-primary/20 mb-4">
                     {String(idx + 1).padStart(2, '0')}
                   </div>
-                  <h3 className="text-xl font-bold mb-2">{offering.title}</h3>
+                  <h3 className="text-xl  mb-2">{offering.title}</h3>
                   <p className="text-muted-foreground">{offering.description}</p>
                 </div>
               ))}
@@ -110,7 +110,7 @@ export default function UnitPage({ params }: { params: { slug: string } }) {
       <section className="py-20 bg-slate-50">
         <div className="container">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12">How We Work</h2>
+            <h2 className="text-3xl md:text-4xl  mb-12">How We Work</h2>
 
             <div className="space-y-6">
               <div className="flex gap-4 bg-white p-6 rounded-xl border">
@@ -120,7 +120,7 @@ export default function UnitPage({ params }: { params: { slug: string } }) {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2">Discovery & Scoping</h3>
+                  <h3 className="text-xl  mb-2">Discovery & Scoping</h3>
                   <p className="text-muted-foreground">
                     We start with deep immersion in your business context, constraints, and 
                     ambitions. Unlike traditional consulting, we dig into technical and operational 
@@ -136,7 +136,7 @@ export default function UnitPage({ params }: { params: { slug: string } }) {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2">Co-Creation & Build</h3>
+                  <h3 className="text-xl  mb-2">Co-Creation & Build</h3>
                   <p className="text-muted-foreground">
                     Working shoulder-to-shoulder with your teams, we design, build, and validate 
                     solutions. This isn't just advice—we write code, run pilots, and manage 
@@ -152,7 +152,7 @@ export default function UnitPage({ params }: { params: { slug: string } }) {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2">Scale & Transfer</h3>
+                  <h3 className="text-xl  mb-2">Scale & Transfer</h3>
                   <p className="text-muted-foreground">
                     Success means your team can sustain results without us. We build capability 
                     through structured knowledge transfer and coaching, not dependency.
@@ -169,7 +169,7 @@ export default function UnitPage({ params }: { params: { slug: string } }) {
         <section className="py-20 bg-white">
           <div className="container">
             <div className="max-w-6xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <h2 className="text-3xl md:text-4xl  mb-4">
                 Where We Apply Our Expertise
               </h2>
               <p className="text-lg text-muted-foreground mb-12">
@@ -183,16 +183,16 @@ export default function UnitPage({ params }: { params: { slug: string } }) {
                     href={`/industries/${industry.slug}`}
                     className="group bg-gradient-to-br from-slate-50 to-white p-6 rounded-xl border-2 border-slate-200 hover:border-primary hover:shadow-lg transition-all"
                   >
-                    <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">
+                    <div className="text-xs  text-muted-foreground uppercase tracking-wider mb-2">
                       {industry.cluster}
                     </div>
-                    <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
+                    <h3 className="text-xl  mb-2 group-hover:text-primary transition-colors">
                       {industry.name}
                     </h3>
                     <p className="text-sm text-muted-foreground mb-4">
                       {industry.hook}
                     </p>
-                    <div className="flex items-center text-sm font-medium text-primary">
+                    <div className="flex items-center text-sm  text-primary">
                       Explore Industry
                       <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     </div>
@@ -209,7 +209,7 @@ export default function UnitPage({ params }: { params: { slug: string } }) {
         <section className="py-20 bg-slate-50">
           <div className="container">
             <div className="max-w-6xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <h2 className="text-3xl md:text-4xl  mb-4">
                 Integrated Capabilities
               </h2>
               <p className="text-lg text-muted-foreground mb-12">
@@ -223,13 +223,13 @@ export default function UnitPage({ params }: { params: { slug: string } }) {
                     href={`/capabilities/${capability.slug}`}
                     className="group bg-white p-6 rounded-xl border-2 border-slate-200 hover:border-primary hover:shadow-lg transition-all"
                   >
-                    <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
+                    <h3 className="text-xl  mb-2 group-hover:text-primary transition-colors">
                       {capability.name}
                     </h3>
                     <p className="text-muted-foreground mb-4">
                       {capability.hook}
                     </p>
-                    <div className="flex items-center text-sm font-medium text-primary">
+                    <div className="flex items-center text-sm  text-primary">
                       View Capability
                       <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     </div>
@@ -250,23 +250,6 @@ export default function UnitPage({ params }: { params: { slug: string } }) {
           context={unit.name}
         />
       )}
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-primary to-accent text-white">
-        <div className="container text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Let's Build Together
-          </h2>
-          <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
-            {unit.name} is ready to partner on your most ambitious challenges
-          </p>
-          <Button size="lg" variant="secondary" asChild>
-            <Link href="/contact">
-              Start a Conversation <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
-        </div>
-      </section>
     </main>
   )
 }

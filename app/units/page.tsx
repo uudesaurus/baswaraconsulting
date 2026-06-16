@@ -22,10 +22,10 @@ export default function UnitsPage() {
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
         <div className="container relative">
           <div className="max-w-4xl">
-            <div className="inline-block px-4 py-1 bg-white/20 backdrop-blur-sm text-white text-sm font-semibold rounded-full mb-6">
+            <div className="inline-block px-4 py-1 bg-white/20 backdrop-blur-sm text-white text-sm  rounded-full mb-6">
               Beyond Traditional Consulting
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            <h1 className="text-4xl md:text-6xl  mb-6">
               Specialized Delivery Engines
             </h1>
             <p className="text-xl md:text-2xl opacity-90 mb-8 leading-relaxed">
@@ -47,7 +47,7 @@ export default function UnitsPage() {
       <section className="py-24 bg-white">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-3xl md:text-4xl  mb-4">
               How We Deliver
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -73,13 +73,13 @@ export default function UnitsPage() {
 
                   {/* Content */}
                   <div className="mb-4">
-                    <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">
+                    <div className="text-xs  text-muted-foreground uppercase tracking-wider mb-2">
                       {unit.role}
                     </div>
-                    <h3 className="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">
+                    <h3 className="text-2xl  mb-2 group-hover:text-primary transition-colors">
                       {unit.name}
                     </h3>
-                    <p className="text-sm text-primary/80 font-medium mb-4">
+                    <p className="text-sm text-primary/80  mb-4">
                       {unit.tagline}
                     </p>
                   </div>
@@ -94,7 +94,7 @@ export default function UnitsPage() {
                       <div key={offeringIdx} className="flex items-start gap-2">
                         <div className="mt-1 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
                         <div>
-                          <div className="font-semibold text-sm">{offering.title}</div>
+                          <div className=" text-sm">{offering.title}</div>
                           <div className="text-xs text-muted-foreground">{offering.description}</div>
                         </div>
                       </div>
@@ -102,13 +102,13 @@ export default function UnitsPage() {
                   </div>
 
                   {/* CTA */}
-                  <div className="flex items-center text-sm font-semibold text-primary group-hover:gap-2 transition-all">
+                  <div className="flex items-center text-sm  text-primary group-hover:gap-2 transition-all">
                     Learn More
                     <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </div>
 
                   {/* Decorative Element */}
-                  <div className="absolute top-4 right-4 text-6xl font-bold text-slate-100 group-hover:text-primary/10 transition-colors">
+                  <div className="absolute top-4 right-4 text-6xl  text-slate-100 group-hover:text-primary/10 transition-colors">
                     {unitIndex + 1}
                   </div>
                 </Link>
@@ -122,7 +122,7 @@ export default function UnitsPage() {
       <section className="py-24 bg-slate-50">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl  mb-6">
               The Baswara Difference
             </h2>
             <p className="text-xl text-muted-foreground mb-12">
@@ -132,45 +132,28 @@ export default function UnitsPage() {
 
             <div className="grid md:grid-cols-3 gap-8 text-left">
               <div className="bg-white p-6 rounded-xl border">
-                <div className="text-4xl font-bold text-primary mb-4">01</div>
-                <h3 className="text-lg font-bold mb-2">Strategic + Technical</h3>
+                <div className="text-4xl  text-primary mb-4">01</div>
+                <h3 className="text-lg  mb-2">Strategic + Technical</h3>
                 <p className="text-sm text-muted-foreground">
                   We combine McKinsey-style strategy with hands-on engineering capability
                 </p>
               </div>
               <div className="bg-white p-6 rounded-xl border">
-                <div className="text-4xl font-bold text-primary mb-4">02</div>
-                <h3 className="text-lg font-bold mb-2">Shared Accountability</h3>
+                <div className="text-4xl  text-primary mb-4">02</div>
+                <h3 className="text-lg  mb-2">Shared Accountability</h3>
                 <p className="text-sm text-muted-foreground">
                   Success-based engagement models align our incentives with your outcomes
                 </p>
               </div>
               <div className="bg-white p-6 rounded-xl border">
-                <div className="text-4xl font-bold text-primary mb-4">03</div>
-                <h3 className="text-lg font-bold mb-2">Indonesia-First</h3>
+                <div className="text-4xl  text-primary mb-4">03</div>
+                <h3 className="text-lg  mb-2">Indonesia-First</h3>
                 <p className="text-sm text-muted-foreground">
                   Deep local regulatory knowledge and government relations expertise
                 </p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-primary to-accent text-white">
-        <div className="container text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to Transform Your Business?
-          </h2>
-          <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
-            Let's discuss which delivery model fits your challenge
-          </p>
-          <Button size="lg" variant="secondary" asChild>
-            <Link href="/contact">
-              Start the Conversation <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
         </div>
       </section>
     </main>

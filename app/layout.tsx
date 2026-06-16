@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { IBM_Plex_Sans } from "next/font/google"
+import { DM_Sans } from "next/font/google"
 import Script from "next/script"
 import "./globals.css"
 import { cn } from "@/lib/utils"
@@ -10,16 +10,16 @@ import Footer from "@/components/footer"
 import CTASection from "@/components/cta-section"
 
 
-const fontSans = IBM_Plex_Sans({
+const fontSans = DM_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400"],
   variable: "--font-sans",
 })
 
-// Use the same font for headings but with a heavier weight
-const fontHeading = IBM_Plex_Sans({
+// Use the same font for headings
+const fontHeading = DM_Sans({
   subsets: ["latin"],
-  weight: ["600"],
+  weight: ["400"],
   variable: "--font-heading",
 })
 

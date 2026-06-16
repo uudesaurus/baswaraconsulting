@@ -248,13 +248,13 @@ Create a special styled component for Indonesian context:
 
 ```tsx
 <div className="bg-gradient-to-br from-amber-50 to-orange-50 p-8 rounded-xl border-2 border-amber-200">
-  <div className="text-xs font-semibold text-amber-900 uppercase mb-2">
+  <div className="text-xs  text-amber-900 uppercase mb-2">
     Indonesia Context
   </div>
-  <h3 className="text-2xl font-bold mb-3">{localContext.title}</h3>
+  <h3 className="text-2xl  mb-3">{localContext.title}</h3>
   <p className="text-slate-700 mb-4">{localContext.description}</p>
   <div className="p-4 bg-white/60 rounded-lg">
-    <strong>Baswara's Service:</strong> {localContext.pitch}
+    <span>Baswara's Service:</span> {localContext.pitch}
   </div>
 </div>
 ```
@@ -265,21 +265,21 @@ Enhance the service cards to show all three elements:
 
 ```tsx
 <div className="bg-white p-6 rounded-xl border-2">
-  <h4 className="text-xl font-bold mb-3">{service.title}</h4>
+  <h4 className="text-xl  mb-3">{service.title}</h4>
   
   <div className="mb-4">
-    <span className="text-xs font-bold text-red-600 uppercase">The Client Problem</span>
+    <span className="text-xs  text-red-600 uppercase">The Client Problem</span>
     <p className="text-sm mt-1">{service.clientProblem}</p>
   </div>
   
   <div className="mb-4">
-    <span className="text-xs font-bold text-blue-600 uppercase">The Methodology</span>
+    <span className="text-xs  text-blue-600 uppercase">The Methodology</span>
     <p className="text-sm mt-1">{service.methodology}</p>
   </div>
   
   <div className="p-3 bg-green-50 rounded">
-    <span className="text-xs font-bold text-green-800 uppercase">The Deliverable</span>
-    <p className="text-sm font-semibold mt-1">{service.deliverable}</p>
+    <span className="text-xs  text-green-800 uppercase">The Deliverable</span>
+    <p className="text-sm  mt-1">{service.deliverable}</p>
   </div>
 </div>
 ```

@@ -394,10 +394,10 @@ const relevantInsights = getInsightsByUnit('x', 3)
 - Background: Gradient from `slate-50` to `white`
 
 ### Typography:
-- Title: `text-3xl md:text-4xl font-bold`
+- Title: `text-3xl md:text-4xl `
 - Description: `text-lg text-muted-foreground`
-- Context badge: `text-sm font-medium text-primary`
-- Card title: `text-lg font-semibold`
+- Context badge: `text-sm  text-primary`
+- Card title: `text-lg `
 - Card excerpt: `text-sm text-muted-foreground`
 
 ### Spacing:

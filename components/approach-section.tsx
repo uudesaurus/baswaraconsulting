@@ -87,7 +87,7 @@ export default function ApproachSection() {
                       <span className="text-accent font-heading text-xl">{step.number}</span>
                     </div>
                     <div className="pl-24 md:pl-0">
-                      <h3 className="text-2xl font-medium mb-3">{step.title}</h3>
+                      <h3 className="text-2xl  mb-3">{step.title}</h3>
                       <p className="text-muted-foreground">{step.description}</p>
                     </div>
                   </div>

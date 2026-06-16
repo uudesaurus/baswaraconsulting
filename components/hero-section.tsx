@@ -50,11 +50,11 @@ export default function HeroSection() {
       <div className="container relative z-10">
         <div className="max-w-3xl mx-auto text-center space-y-8">
           <div className="inline-block px-4 py-1.5 bg-accent/10 rounded-full mb-6 animate-fade-up [animation-delay:200ms] opacity-0">
-            <span className="text-sm font-medium text-accent">Transforming Industries & Systems</span>
+            <span className="text-sm  text-accent">Transforming Industries & Systems</span>
           </div>
 
           <h1 className="animate-fade-up [animation-delay:300ms] opacity-0">
-            <span className="gradient-text">Multisectoral Insight.</span> <br />
+            <span className="gradient-text">Multisectoral Insight.</span> <br/>
             Global Execution.
           </h1>
 

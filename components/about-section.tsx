@@ -42,7 +42,7 @@ export default function AboutSection() {
             <div className="relative h-[500px] rounded-lg overflow-hidden">
               <Image
                 src="/images/arief.png"
-                alt="Arief Sudrajat, Founder of Ayah Consulting"
+                alt="Arief Sudrajat, Founder of Baswara Consulting"
                 fill
                 className="object-cover"
                 priority
@@ -50,7 +50,7 @@ export default function AboutSection() {
             </div>
             <div className="absolute -bottom-6 -right-6 bg-background p-6 rounded-lg border border-border shadow-lg">
               <p className="text-sm text-muted-foreground mb-2">Founder</p>
-              <h4 className="text-xl font-medium">Arief Sudrajat</h4>
+              <h4 className="text-xl ">Arief Sudrajat</h4>
               <p className="text-accent text-sm">26+ Years Experience</p>
             </div>
           </div>
@@ -68,17 +68,16 @@ export default function AboutSection() {
 
             <div className="space-y-6 mb-8">
               <div>
-                <h4 className="text-lg font-medium mb-2">Our Vision</h4>
-                <p className="text-muted-foreground">
-                  "To shape adaptive, measurable transformation across industries and systems."
+                <h4 className="text-lg  mb-2">Our Vision</h4>
+                <p className="text-slate-600 ">
+                  To shape adaptive, measurable transformation across industries and global systems.
                 </p>
               </div>
 
               <div>
-                <h4 className="text-lg font-medium mb-2">Our Mission</h4>
-                <p className="text-muted-foreground">
-                  "Deliver advisory rooted in execution, strategy built on evidence, and solutions co-created with
-                  clients."
+                <h4 className="text-lg  mb-2">Our Mission</h4>
+                <p className="text-slate-600 ">
+                  Deliver advisory rooted in execution, strategy built on evidence, and solutions co-created with our partners.
                 </p>
               </div>
             </div>

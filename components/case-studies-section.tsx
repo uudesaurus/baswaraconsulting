@@ -1,9 +1,8 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, ChevronRight } from "lucide-react"
-import Link from "next/link"
+import { ArrowRight, ChevronRight, Target, Users, BarChart3, Globe2, Briefcase } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const caseStudies = [
@@ -11,6 +10,7 @@ const caseStudies = [
     id: "public-health",
     category: "Public Health & Development",
     description: "Transforming healthcare systems through innovative supply chain solutions",
+    icon: Globe2,
     cases: [
       {
         id: "hiv-tb-reform",
@@ -48,6 +48,7 @@ const caseStudies = [
     id: "industrial",
     category: "Industrial & Distribution",
     description: "Optimizing complex supply chains and distribution networks",
+    icon: BarChart3,
     cases: [
       {
         id: "import-optimization",
@@ -75,6 +76,7 @@ const caseStudies = [
     id: "policy",
     category: "Policy & Environmental",
     description: "Developing frameworks for sustainable policy implementation",
+    icon: Target,
     cases: [
       {
         id: "carbon-policy",
@@ -93,260 +95,190 @@ const caseStudies = [
 export default function CaseStudiesSection() {
   const [activeCategory, setActiveCategory] = useState("public-health")
   const [activeCase, setActiveCase] = useState("hiv-tb-reform")
-  const [isTransitioning, setIsTransitioning] = useState(false)
+  const detailRef = useRef<HTMLDivElement>(null)
 
   const selectedCategory = caseStudies.find(cat => cat.id === activeCategory)
+  const selectedCase = selectedCategory?.cases.find(c => c.id === activeCase)
 
-  const handleCategoryChange = (categoryId: string) => {
-    setIsTransitioning(true)
-    setActiveCategory(categoryId)
-    setActiveCase(caseStudies.find(cat => cat.id === categoryId)?.cases[0].id || "")
-    setTimeout(() => setIsTransitioning(false), 500)
+  // Auto-scroll to details when case changes on mobile
+  const handleCaseSelect = (caseId: string) => {
+    setActiveCase(caseId)
+    if (window.innerWidth < 1024) {
+      detailRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })
+    }
   }
 
   return (
-    <section className="py-24 bg-secondary/50">
+    <section className="py-24 bg-white border-y">
       <div className="container max-w-7xl">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-4xl font-bold mb-4">Case Studies</h2>
-          <p className="text-xl text-muted-foreground">
-            Delivering measurable impact across sectors through innovative solutions and strategic implementation
-          </p>
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-16 pb-8 border-b">
+          <div className="max-w-2xl">
+            <h2 className="text-4xl md:text-5xl  tracking-tight mb-4">Case Studies</h2>
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              Delivering measurable impact across sectors through innovative solutions and strategic implementation.
+            </p>
+          </div>
+          <div className="hidden lg:block">
+            <Button variant="outline" className="rounded-full px-6">
+              View Methodology <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </div>
         </div>
 
-        <div className="relative space-y-12">
-          {/* Industry Categories */}
-          <div className="grid md:grid-cols-3 gap-8">
-            {caseStudies.map((category) => (
-              <div key={category.id} className="relative group/card">
-                <button
-                  onClick={() => handleCategoryChange(category.id)}
-                  className={cn(
-                    "w-full relative p-8 rounded-xl border bg-background text-left transition-all duration-300",
-                    activeCategory === category.id 
-                      ? "border-primary shadow-lg ring-2 ring-primary/10" 
-                      : "border-border/50 hover:border-primary/50 hover:shadow-md"
-                  )}
-                >
-                  {/* Category Indicator Line */}
-                  <div className={cn(
-                    "absolute left-1/2 -bottom-[28px] w-px bg-gradient-to-b from-primary/50 to-transparent h-[28px] transition-all duration-500",
-                    activeCategory === category.id ? "opacity-100" : "opacity-0"
-                  )} />
-                  
-                  {/* Category Content */}
-                  <div className="relative z-10">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className={cn(
-                        "w-2 h-2 rounded-full transition-all duration-300",
-                        activeCategory === category.id 
-                          ? "bg-primary scale-100" 
-                          : "bg-muted-foreground/30 scale-75 group-hover/card:bg-primary/50"
+        <div className="grid lg:grid-cols-12 gap-12">
+          {/* Navigation Sidebar */}
+          <div className="lg:col-span-4 space-y-10">
+            {/* Category Selection */}
+            <div className="space-y-4">
+              <h3 className="text-xs  text-slate-400 uppercase tracking-widest px-4">Industries</h3>
+              <nav className="space-y-1">
+                {caseStudies.map((category) => (
+                  <button
+                    key={category.id}
+                    onClick={() => {
+                      setActiveCategory(category.id)
+                      setActiveCase(category.cases[0].id)
+                    }}
+                    className={cn(
+                      "w-full flex items-center justify-between p-4 rounded-xl transition-all duration-200 group",
+                      activeCategory === category.id 
+                        ? "bg-primary text-white shadow-lg shadow-primary/20" 
+                        : "hover:bg-slate-50 text-slate-600"
+                    )}
+                  >
+                    <div className="flex items-center gap-3">
+                      <category.icon className={cn(
+                        "h-5 w-5",
+                        activeCategory === category.id ? "text-white" : "text-slate-400 group-hover:text-primary"
                       )} />
-                      <h3 className={cn(
-                        "text-2xl font-semibold transition-colors",
-                        activeCategory === category.id 
-                          ? "text-primary" 
-                          : "group-hover/card:text-primary"
-                      )}>
-                        {category.category}
-                      </h3>
+                      <span className=" text-sm">{category.category}</span>
                     </div>
-                    <p className="text-muted-foreground mb-6 pl-5">
-                      {category.description}
+                    <span className={cn(
+                      "text-[10px]  px-2 py-0.5 rounded-full border",
+                      activeCategory === category.id 
+                        ? "bg-white/20 border-white/30 text-white" 
+                        : "bg-slate-100 border-slate-200 text-slate-500"
+                    )}>
+                      {category.cases.length}
+                    </span>
+                  </button>
+                ))}
+              </nav>
+            </div>
+
+            {/* Case List for Category */}
+            <div className="space-y-4">
+              <h3 className="text-xs  text-slate-400 uppercase tracking-widest px-4">Projects</h3>
+              <div className="space-y-2">
+                {selectedCategory?.cases.map((case_) => (
+                  <button
+                    key={case_.id}
+                    onClick={() => handleCaseSelect(case_.id)}
+                    className={cn(
+                      "w-full text-left p-4 rounded-xl border transition-all duration-200",
+                      activeCase === case_.id 
+                        ? "border-primary bg-primary/5 ring-1 ring-primary/20" 
+                        : "border-transparent hover:border-slate-200 hover:bg-slate-50"
+                    )}
+                  >
+                    <p className={cn(
+                      "text-xs  mb-1 uppercase tracking-wider",
+                      activeCase === case_.id ? "text-primary" : "text-slate-400"
+                    )}>
+                      {case_.industry}
                     </p>
-                    <div className="flex items-center text-sm text-muted-foreground pl-5">
-                      <span className="font-medium">{category.cases.length} case studies</span>
-                      <ChevronRight className={cn(
-                        "ml-1 h-4 w-4 transition-transform duration-300",
-                        activeCategory === category.id ? "rotate-90" : "group-hover/card:translate-x-1"
-                      )} />
-                    </div>
-                  </div>
-                </button>
+                    <h4 className={cn(
+                      "text-base  leading-snug",
+                      activeCase === case_.id ? "text-slate-900" : "text-slate-600"
+                    )}>
+                      {case_.title}
+                    </h4>
+                  </button>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
 
-          {/* Cases for Selected Industry */}
-          <div className={cn(
-            "relative transition-all duration-500 transform",
-            !isTransitioning && activeCategory ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          )}>
-            {selectedCategory && (
-              <>
-                {/* Section Header */}
-                <div className="mb-8">
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="w-2 h-2 rounded-full bg-primary" />
-                    <h4 className="text-xl font-semibold text-primary">
-                      {selectedCategory.category}
-                    </h4>
+          {/* Main Content Area */}
+          <div className="lg:col-span-8" ref={detailRef}>
+            {selectedCase ? (
+              <div className="bg-slate-50 rounded-2xl p-6 md:p-10 lg:p-12 border border-slate-200/60 shadow-sm min-h-[600px] flex flex-col">
+                <div className="mb-10 animate-in fade-in slide-in-from-bottom-4 duration-500">
+                  <div className="flex flex-wrap items-center gap-2 mb-6">
+                    <span className="px-3 py-1 bg-primary/10 text-primary text-[10px]  uppercase tracking-widest rounded-full">
+                      {selectedCategory?.category}
+                    </span>
+                    <span className="px-3 py-1 bg-slate-200 text-slate-600 text-[10px]  uppercase tracking-widest rounded-full">
+                      {selectedCase.type}
+                    </span>
                   </div>
-                  <p className="text-muted-foreground pl-5">
-                    Select a case study to explore the details
-                  </p>
-                </div>
+                  <h3 className="text-3xl md:text-4xl lg:text-5xl  text-slate-900 leading-[1.1] mb-8">
+                    {selectedCase.title}
+                  </h3>
+                  
+                  <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm mb-12">
+                    <h4 className="text-xs  text-slate-400 uppercase tracking-[0.2em] mb-4">Context & Challenge</h4>
+                    <p className="text-lg md:text-xl text-slate-600 leading-relaxed ">
+                      {selectedCase.context}
+                    </p>
+                  </div>
 
-                {/* Case Cards */}
-                <div className="grid lg:grid-cols-3 gap-6">
-                  {selectedCategory.cases.map((case_, index) => (
-                    <div
-                      key={case_.id}
-                      className="group/case"
-                      style={{
-                        animation: `fadeSlideIn 500ms ${index * 100}ms forwards`,
-                        opacity: 0,
-                        transform: 'translateY(20px)'
-                      }}
-                    >
-                      <button
-                        onClick={() => setActiveCase(case_.id)}
-                        className={cn(
-                          "w-full relative p-6 rounded-xl border bg-background/80 backdrop-blur-sm text-left transition-all duration-300",
-                          activeCase === case_.id 
-                            ? "border-primary shadow-md ring-1 ring-primary/10" 
-                            : "border-border/50 hover:border-primary/50 hover:shadow-md"
-                        )}
-                      >
-                        <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-primary/10 to-transparent" />
-                        
-                        <div className="relative">
-                          <div className="flex items-center gap-2 mb-4">
-                            <div className={cn(
-                              "w-1.5 h-1.5 rounded-full transition-all duration-300",
-                              activeCase === case_.id 
-                                ? "bg-primary" 
-                                : "bg-primary/40 group-hover/case:bg-primary/60"
-                            )} />
-                            <span className="text-sm font-medium text-primary/80">
-                              {case_.industry}
-                            </span>
-                          </div>
-                          
-                          <h4 className={cn(
-                            "text-xl font-medium mb-3 transition-colors pl-3.5",
-                            activeCase === case_.id 
-                              ? "text-primary" 
-                              : "group-hover/case:text-primary"
-                          )}>
-                            {case_.title}
-                          </h4>
-                          <p className="text-sm text-muted-foreground line-clamp-2 mb-4 pl-3.5">
-                            {case_.context}
-                          </p>
-                          <div className="flex items-center justify-between border-t pt-4 pl-3.5">
-                            <span className="text-sm text-muted-foreground">
-                              {case_.type}
-                            </span>
-                            <ChevronRight className={cn(
-                              "h-4 w-4 text-muted-foreground transition-transform duration-300",
-                              activeCase === case_.id ? "rotate-90" : "group-hover/case:translate-x-1"
-                            )} />
-                          </div>
+                  <div className="grid md:grid-cols-2 gap-8">
+                    {/* Solution Column */}
+                    <div className="space-y-6">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                          <Briefcase className="h-5 w-5 text-primary" />
                         </div>
-                      </button>
+                        <h4 className="text-lg  text-slate-900">Our Strategic Solution</h4>
+                      </div>
+                      <div className="relative pl-6 border-l-2 border-primary/20">
+                        <p className="text-slate-600 leading-relaxed">
+                          {selectedCase.solution}
+                        </p>
+                      </div>
                     </div>
-                  ))}
-                </div>
-              </>
-            )}
-          </div>
 
-          {/* Case Details */}
-          <div className={cn(
-            "bg-background rounded-xl p-8 border shadow-sm transition-all duration-500",
-            activeCase ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          )}>
-            {selectedCategory?.cases.map((case_) => (
-              <div
-                key={case_.id}
-                className={cn(
-                  "transition-all duration-500",
-                  activeCase === case_.id ? "opacity-100" : "opacity-0 hidden"
-                )}
-              >
-                <div className="mb-12 border-b pb-8">
-                  {/* Breadcrumb */}
-                  <div className="flex flex-wrap items-center gap-3 text-sm mb-6">
-                    <div className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                      <span className="font-medium text-primary">{selectedCategory.category}</span>
-                    </div>
-                    <ChevronRight className="h-4 w-4 text-muted-foreground" />
-                    <div className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary/60" />
-                      <span className="text-muted-foreground">{case_.industry}</span>
-                    </div>
-                    <ChevronRight className="h-4 w-4 text-muted-foreground" />
-                    <div className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary/40" />
-                      <span className="text-muted-foreground">{case_.type}</span>
-                    </div>
-                  </div>
-
-                  <h3 className="text-3xl font-semibold mb-6">{case_.title}</h3>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    {case_.context}
-                  </p>
-                </div>
-
-                <div className="grid md:grid-cols-3 gap-8">
-                  <div className="space-y-4">
-                    <h4 className="text-xl font-semibold flex items-center">
-                      <span className="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center mr-3 text-sm">1</span>
-                      Our Solution
-                    </h4>
-                    <div className="p-6 rounded-lg bg-muted/50">
-                      <p className="text-muted-foreground leading-relaxed">
-                        {case_.solution}
-                      </p>
-                    </div>
-                  </div>
-                  <div className="space-y-4">
-                    <h4 className="text-xl font-semibold flex items-center">
-                      <span className="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center mr-3 text-sm">2</span>
-                      Impact Delivered
-                    </h4>
-                    <div className="p-6 rounded-lg bg-muted/50">
-                      <p className="text-muted-foreground leading-relaxed">
-                        {case_.impact}
-                      </p>
-                    </div>
-                  </div>
-                  <div className="space-y-4">
-                    <h4 className="text-xl font-semibold flex items-center">
-                      <span className="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center mr-3 text-sm">3</span>
-                      Client Profile
-                    </h4>
-                    <div className="p-6 rounded-lg bg-muted/50">
-                      <p className="font-medium mb-2">{case_.client}</p>
-                      <p className="text-sm text-muted-foreground">{case_.type}</p>
-                      <div className="mt-4 pt-4 border-t">
-                        <p className="text-sm font-medium text-primary/80">Industry</p>
-                        <p className="text-sm text-muted-foreground">{case_.industry}</p>
+                    {/* Impact Column */}
+                    <div className="space-y-6">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                          <Target className="h-5 w-5 text-primary" />
+                        </div>
+                        <h4 className="text-lg  text-slate-900">Measurable Impact</h4>
+                      </div>
+                      <div className="relative pl-6 border-l-2 border-primary/20">
+                        <p className="text-slate-600 leading-relaxed">
+                          {selectedCase.impact}
+                        </p>
                       </div>
                     </div>
                   </div>
                 </div>
+
+                <div className="mt-auto pt-10 border-t border-slate-200 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 animate-in fade-in duration-700">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-slate-200 flex items-center justify-center overflow-hidden border-2 border-white shadow-sm">
+                      <Users className="h-6 w-6 text-slate-400" />
+                    </div>
+                    <div>
+                      <p className="text-[10px]  text-slate-400 uppercase tracking-[0.2em]">Client Profile</p>
+                      <p className="text-sm  text-slate-900">{selectedCase.client}</p>
+                    </div>
+                  </div>
+                  <Button variant="link" className="text-primary  p-0 h-auto group">
+                    Learn about this sector <ChevronRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </div>
               </div>
-            ))}
+            ) : (
+              <div className="bg-slate-50 rounded-2xl border-2 border-dashed border-slate-200 flex items-center justify-center h-[600px] text-slate-400 ">
+                Select a case study to view full report
+              </div>
+            )}
           </div>
         </div>
       </div>
-
-      <style jsx global>{`
-        @keyframes fadeSlideIn {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
     </section>
   )
 }

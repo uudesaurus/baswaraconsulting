@@ -39,7 +39,7 @@ export default function CareerPage() {
     <div className="py-24">
       <div className="container">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h1 className="text-4xl font-bold mb-6">Create a World That Inspires Human Connection</h1>
+          <h1 className="text-4xl  mb-6">Create a World That Inspires Human Connection</h1>
           <p className="text-xl text-muted-foreground">
             At Baswara, we seek people that promote enthusiasm who willingly make differences and bridging 
             possibilities. Do it now with Baswara.
@@ -57,7 +57,7 @@ export default function CareerPage() {
             
             <div className="flex items-center gap-4">
               <p className="text-sm text-muted-foreground">or</p>
-              <p className="font-medium">Filter by Employment Type</p>
+              <p className="">Filter by Employment Type</p>
               <Select value={selectedType} onValueChange={setSelectedType}>
                 <SelectTrigger className="w-[180px]">
                   <SelectValue placeholder="Select type" />
@@ -92,7 +92,7 @@ export default function CareerPage() {
                           {job.location}
                         </div>
                       </div>
-                      <h3 className="text-xl font-medium group-hover:text-primary transition-colors">
+                      <h3 className="text-xl  group-hover:text-primary transition-colors">
                         {job.title}
                       </h3>
                     </div>

@@ -5,9 +5,6 @@ import AboutSection from "@/components/about-section"
 import CaseStudiesSection from "@/components/case-studies-section"
 import ApproachSection from "@/components/approach-section"
 import InsightsSection from "@/components/insights-section"
-import CTASection from "@/components/cta-section"
-import { ClientMarquee } from "@/components/client-marquee"
-import { FounderProfile } from "@/components/founder-profile"
 
 export default function Home() {
   return (
@@ -19,7 +16,6 @@ export default function Home() {
       <CaseStudiesSection />
       {/* <ApproachSection /> */}
       <InsightsSection />
-      <CTASection />
     </div>
   )
 }

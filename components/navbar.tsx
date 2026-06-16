@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
@@ -45,8 +46,7 @@ export default function Navbar() {
     >
       <div className="container flex items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
-          <span className="text-lg font-bold gradient-text">BASWARA</span>
-          <span className="text-lg font-medium text-muted-foreground">CONSULTING</span>
+          <Image src="/logo.svg" alt="Baswara Consulting Logo" width={180} height={40} priority className="h-8 w-auto" />
         </Link>
 
         {/* Desktop Navigation */}
@@ -57,7 +57,9 @@ export default function Navbar() {
             onMouseEnter={() => handleMouseEnter("capabilities")}
             onMouseLeave={handleMouseLeave}
           >
-            <button className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+            <button
+              className="px-4 py-2 text-sm  text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
+            >
               Capabilities
               <ChevronDown className="h-3 w-3" />
             </button>
@@ -68,7 +70,7 @@ export default function Navbar() {
                   <div className="mb-4">
                     <Link 
                       href="/capabilities"
-                      className="text-xs font-semibold text-primary uppercase tracking-wider hover:underline"
+                      className="text-xs  text-primary uppercase tracking-wider hover:underline"
                     >
                       View All Capabilities →
                     </Link>
@@ -80,7 +82,7 @@ export default function Navbar() {
                         href={`/capabilities/${capability.slug}`}
                         className="group p-3 rounded-md hover:bg-slate-50 transition-colors"
                       >
-                        <div className="font-semibold text-sm mb-1 group-hover:text-primary transition-colors">
+                        <div className=" text-sm mb-1 group-hover:text-primary transition-colors">
                           {capability.name}
                         </div>
                         <div className="text-xs text-muted-foreground line-clamp-2">
@@ -100,7 +102,9 @@ export default function Navbar() {
             onMouseEnter={() => handleMouseEnter("industries")}
             onMouseLeave={handleMouseLeave}
           >
-            <button className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+            <button
+              className="px-4 py-2 text-sm  text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
+            >
               Industries
               <ChevronDown className="h-3 w-3" />
             </button>
@@ -111,7 +115,7 @@ export default function Navbar() {
                   <div className="mb-4">
                     <Link 
                       href="/industries"
-                      className="text-xs font-semibold text-primary uppercase tracking-wider hover:underline"
+                      className="text-xs  text-primary uppercase tracking-wider hover:underline"
                     >
                       View All Industries →
                     </Link>
@@ -119,7 +123,7 @@ export default function Navbar() {
                   <div className="grid grid-cols-3 gap-6">
                     {Object.entries(industryGroups).map(([cluster, industries]) => (
                       <div key={cluster}>
-                        <div className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-3 pb-2 border-b">
+                        <div className="text-xs  text-slate-900 uppercase tracking-wider mb-3 pb-2 border-b">
                           {cluster}
                         </div>
                         <div className="space-y-2">
@@ -129,7 +133,7 @@ export default function Navbar() {
                               href={`/industries/${industry.slug}`}
                               className="group block p-2 rounded-md hover:bg-slate-50 transition-colors"
                             >
-                              <div className="font-semibold text-sm mb-0.5 group-hover:text-primary transition-colors">
+                              <div className=" text-sm mb-0.5 group-hover:text-primary transition-colors">
                                 {industry.name}
                               </div>
                               <div className="text-xs text-muted-foreground">
@@ -147,17 +151,17 @@ export default function Navbar() {
           </div>
 
           {/* Units Link */}
-          <Link
+          {/* <Link
             href="/units"
-            className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            className="px-4 py-2 text-sm  text-muted-foreground hover:text-foreground transition-colors"
           >
             Specialized Units
-          </Link>
+          </Link> */}
 
           {/* Insights Link */}
           <Link
             href="/insights"
-            className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            className="px-4 py-2 text-sm  text-muted-foreground hover:text-foreground transition-colors"
           >
             Insights
           </Link>
@@ -165,7 +169,7 @@ export default function Navbar() {
           {/* About Link */}
           <Link
             href="/about"
-            className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            className="px-4 py-2 text-sm  text-muted-foreground hover:text-foreground transition-colors"
           >
             About
           </Link>
@@ -173,7 +177,7 @@ export default function Navbar() {
           {/* Career Link */}
           <Link
             href="/career"
-            className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            className="px-4 py-2 text-sm  text-muted-foreground hover:text-foreground transition-colors"
           >
             Career
           </Link>
@@ -198,7 +202,7 @@ export default function Navbar() {
               <div>
                 <Link 
                   href="/capabilities"
-                  className="flex items-center justify-between text-lg font-bold mb-3 hover:text-primary transition-colors"
+                  className="flex items-center justify-between text-lg  mb-3 hover:text-primary transition-colors"
                 >
                   Capabilities
                   <ArrowRight className="h-4 w-4" />
@@ -220,7 +224,7 @@ export default function Navbar() {
               <div>
                 <Link 
                   href="/industries"
-                  className="flex items-center justify-between text-lg font-bold mb-3 hover:text-primary transition-colors"
+                  className="flex items-center justify-between text-lg  mb-3 hover:text-primary transition-colors"
                 >
                   Industries
                   <ArrowRight className="h-4 w-4" />
@@ -228,7 +232,7 @@ export default function Navbar() {
                 <div className="space-y-4 pl-4 border-l-2 border-slate-200">
                   {Object.entries(industryGroups).map(([cluster, industries]) => (
                     <div key={cluster}>
-                      <div className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-2">
+                      <div className="text-xs  text-slate-900 uppercase tracking-wider mb-2">
                         {cluster}
                       </div>
                       <div className="space-y-1.5">
@@ -248,27 +252,27 @@ export default function Navbar() {
               </div>
 
               {/* Other Links */}
-              <Link
+              {/* <Link
                 href="/units"
-                className="text-lg font-medium hover:text-primary transition-colors"
+                className="text-lg  hover:text-primary transition-colors"
               >
                 Specialized Units
-              </Link>
+              </Link> */}
               <Link
                 href="/insights"
-                className="text-lg font-medium hover:text-primary transition-colors"
+                className="text-lg  hover:text-primary transition-colors"
               >
                 Insights
               </Link>
               <Link
                 href="/about"
-                className="text-lg font-medium hover:text-primary transition-colors"
+                className="text-lg  hover:text-primary transition-colors"
               >
                 About
               </Link>
               <Link
                 href="/career"
-                className="text-lg font-medium hover:text-primary transition-colors"
+                className="text-lg  hover:text-primary transition-colors"
               >
                 Career
               </Link>

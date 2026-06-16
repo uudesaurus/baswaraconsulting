@@ -179,13 +179,13 @@ When hamburger clicked:
 ### Typography
 
 **Navbar Links:**
-- Font: `font-medium`
+- Font: ``
 - Size: `text-sm`
 - Weight: Normal → Bold on hover
 
 **Dropdown Headers:**
-- Cluster Headers: `font-bold uppercase text-xs`
-- Item Titles: `font-semibold text-sm`
+- Cluster Headers: ` uppercase text-xs`
+- Item Titles: ` text-sm`
 - Item Descriptions: `text-xs text-muted-foreground`
 
 ### Spacing & Layout
@@ -226,7 +226,7 @@ When hamburger clicked:
   onMouseEnter={() => handleMouseEnter("capabilities")}
   onMouseLeave={handleMouseLeave}
 >
-  <button>Capabilities ▾</button>
+  <span>Capabilities ▾</button>
   
   {activeDropdown === "capabilities" && (
     <div className="absolute left-0 top-full pt-2 w-[520px]">

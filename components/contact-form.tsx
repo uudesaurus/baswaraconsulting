@@ -125,7 +125,7 @@ export function ContactForm() {
 
   return (
     <div className="bg-card p-8 rounded-lg border sticky top-24">
-      <h2 className="text-2xl font-semibold mb-6">Book an Intro Call</h2>
+      <h2 className="text-2xl  mb-6">Book an Intro Call</h2>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           <div className="grid md:grid-cols-2 gap-6">

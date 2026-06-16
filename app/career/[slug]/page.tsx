@@ -31,6 +31,7 @@ import { Calendar } from "@/components/ui/calendar"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { cn } from "@/lib/utils"
 import { CalendarIcon } from "lucide-react"
+import * as React from "react"
 
 const jobListings = [
   {
@@ -118,8 +119,9 @@ const formSchema = z.object({
   twitter: z.string().min(1, "Twitter handle is required"),
 })
 
-export default function JobPage({ params }: { params: { slug: string } }) {
-  const job = jobListings.find((j) => j.slug === params.slug)
+export default function JobPage({ params }: { params: React.use<{ slug: string }> }) {
+  const { slug } = React.use(params)
+  const job = jobListings.find((j) => j.slug === slug)
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -167,7 +169,7 @@ export default function JobPage({ params }: { params: { slug: string } }) {
               <span className="text-sm text-muted-foreground">{job.department}</span>
             </div>
             
-            <h1 className="text-4xl font-bold mb-8">{job.title}</h1>
+            <h1 className="text-4xl  mb-8">{job.title}</h1>
 
             <div className="space-y-12">
               {/* Overview */}
@@ -177,7 +179,7 @@ export default function JobPage({ params }: { params: { slug: string } }) {
 
               {/* Who We Are Looking For */}
               <div>
-                <h2 className="text-2xl font-semibold mb-4">Who We Are Looking For</h2>
+                <h2 className="text-2xl  mb-4">Who We Are Looking For</h2>
                 <ul className="list-disc pl-6 space-y-2">
                   {job.description.requirements.whoWeAreLookingFor.map((item, index) => (
                     <li key={index} className="text-muted-foreground">{item}</li>
@@ -187,7 +189,7 @@ export default function JobPage({ params }: { params: { slug: string } }) {
 
               {/* Required Attributes */}
               <div>
-                <h2 className="text-2xl font-semibold mb-4">Required Attributes</h2>
+                <h2 className="text-2xl  mb-4">Required Attributes</h2>
                 <ul className="list-disc pl-6 space-y-2">
                   {job.description.requirements.requiredAttributes.map((item, index) => (
                     <li key={index} className="text-muted-foreground">{item}</li>
@@ -197,26 +199,26 @@ export default function JobPage({ params }: { params: { slug: string } }) {
 
               {/* Selection Process */}
               <div>
-                <h2 className="text-2xl font-semibold mb-4">Selection Process</h2>
-                <ol className="list-decimal pl-6 space-y-2">
+                <h2 className="text-2xl  mb-4">Selection Process</h2>
+                <ul className="list-disc pl-6 space-y-2">
                   {job.description.selectionProcess.map((item, index) => (
                     <li key={index} className="text-muted-foreground">{item}</li>
                   ))}
-                </ol>
+                </ul>
               </div>
 
               {/* Application Details */}
               <div className="bg-secondary/50 p-6 rounded-lg">
-                <h2 className="text-2xl font-semibold mb-4">Application Details</h2>
+                <h2 className="text-2xl  mb-4">Application Details</h2>
                 <div className="space-y-3">
                   <p className="text-muted-foreground">
-                    <span className="font-medium text-foreground">Email:</span> {job.description.applicationDetails.email}
+                    <span className=" text-foreground">Email:</span> {job.description.applicationDetails.email}
                   </p>
                   <p className="text-muted-foreground">
-                    <span className="font-medium text-foreground">Subject:</span> {job.description.applicationDetails.subject}
+                    <span className=" text-foreground">Subject:</span> {job.description.applicationDetails.subject}
                   </p>
                   <p className="text-muted-foreground">
-                    <span className="font-medium text-foreground">Deadline:</span> {job.description.applicationDetails.deadline}
+                    <span className=" text-foreground">Deadline:</span> {job.description.applicationDetails.deadline}
                   </p>
                   <p className="text-sm text-muted-foreground mt-4">
                     {job.description.applicationDetails.note}
@@ -227,12 +229,12 @@ export default function JobPage({ params }: { params: { slug: string } }) {
           </div>
 
           <div className="bg-card p-8 rounded-lg border">
-            <h2 className="text-2xl font-semibold mb-6">Application Form</h2>
+            <h2 className="text-2xl  mb-6">Application Form</h2>
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
                 {/* 1. General Information */}
                 <div className="space-y-6">
-                  <h3 className="text-lg font-medium">1. General Information</h3>
+                  <h3 className="text-lg ">1. General Information</h3>
                   <div className="grid md:grid-cols-2 gap-4">
                     <FormField
                       control={form.control}
@@ -402,7 +404,7 @@ export default function JobPage({ params }: { params: { slug: string } }) {
 
                 {/* 2. Latest Education */}
                 <div className="space-y-6">
-                  <h3 className="text-lg font-medium">2. Latest Education</h3>
+                  <h3 className="text-lg ">2. Latest Education</h3>
                   <FormField
                     control={form.control}
                     name="education"
@@ -433,7 +435,7 @@ export default function JobPage({ params }: { params: { slug: string } }) {
 
                 {/* 3. Company and You */}
                 <div className="space-y-6">
-                  <h3 className="text-lg font-medium">3. Baswara Consulting and You</h3>
+                  <h3 className="text-lg ">3. Baswara Consulting and You</h3>
                   <FormField
                     control={form.control}
                     name="referenceSource"
@@ -483,7 +485,7 @@ export default function JobPage({ params }: { params: { slug: string } }) {
 
                 {/* 4-7. Documents */}
                 <div className="space-y-6">
-                  <h3 className="text-lg font-medium">4. Documents</h3>
+                  <h3 className="text-lg ">4. Documents</h3>
                   
                   <FormField
                     control={form.control}
@@ -574,7 +576,7 @@ export default function JobPage({ params }: { params: { slug: string } }) {
 
                 {/* 8. Social Media */}
                 <div className="space-y-6">
-                  <h3 className="text-lg font-medium">8. Social Media Links</h3>
+                  <h3 className="text-lg ">8. Social Media Links</h3>
                   <div className="grid md:grid-cols-2 gap-4">
                     <FormField
                       control={form.control}
@@ -613,4 +615,4 @@ export default function JobPage({ params }: { params: { slug: string } }) {
       </div>
     </div>
   )
-} 
+}

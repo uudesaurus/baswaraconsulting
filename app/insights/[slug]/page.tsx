@@ -4,6 +4,7 @@ import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { notFound } from "next/navigation"
+import * as React from "react"
 
 const insights = [
   {
@@ -93,8 +94,10 @@ const insights = [
   }
 ]
 
-export default function InsightPage({ params }: { params: { slug: string } }) {
-  const insight = insights.find((i) => i.slug === params.slug)
+export default function InsightPage(props: { params: Promise<{ slug: string }> }) {
+  const params = React.use(props.params)
+  const slug = params.slug
+  const insight = insights.find((i) => i.slug === slug)
 
   if (!insight) {
     notFound()
@@ -121,7 +124,7 @@ export default function InsightPage({ params }: { params: { slug: string } }) {
               <span className="text-sm text-muted-foreground">•</span>
               <span className="text-sm text-muted-foreground">{insight.readTime}</span>
             </div>
-            <h1 className="text-4xl font-bold mb-6">{insight.title}</h1>
+            <h1 className="text-4xl  mb-6">{insight.title}</h1>
             <p className="text-muted-foreground">By {insight.author}</p>
           </div>
 
@@ -133,11 +136,11 @@ export default function InsightPage({ params }: { params: { slug: string } }) {
             ))}
 
             {/* Challenges */}
-            <h2 className="text-3xl font-semibold mt-12 mb-6">{insight.content.challenges.title}</h2>
+            <h2 className="text-3xl  mt-12 mb-6">{insight.content.challenges.title}</h2>
             <div className="space-y-8">
               {insight.content.challenges.items.map((challenge, idx) => (
                 <div key={idx}>
-                  <h3 className="text-xl font-medium mb-4">{challenge.title}</h3>
+                  <h3 className="text-xl  mb-4">{challenge.title}</h3>
                   {Array.isArray(challenge.content) ? (
                     challenge.content.map((para, pIdx) => (
                       <p key={pIdx} className="mb-4">{para}</p>
@@ -147,11 +150,11 @@ export default function InsightPage({ params }: { params: { slug: string } }) {
                   )}
                 </div>
               ))}
-              <p className="font-medium">{insight.content.challenges.conclusion}</p>
+              <p className="">{insight.content.challenges.conclusion}</p>
             </div>
 
             {/* Agile Case */}
-            <h2 className="text-3xl font-semibold mt-12 mb-6">{insight.content.agileCase.title}</h2>
+            <h2 className="text-3xl  mt-12 mb-6">{insight.content.agileCase.title}</h2>
             <p className="text-lg mb-4">{insight.content.agileCase.introduction}</p>
             <p className="mb-6">{insight.content.agileCase.description}</p>
             <ul className="space-y-3">
@@ -163,7 +166,7 @@ export default function InsightPage({ params }: { params: { slug: string } }) {
             </ul>
 
             {/* Benefits */}
-            <h2 className="text-3xl font-semibold mt-12 mb-6">{insight.content.benefits.title}</h2>
+            <h2 className="text-3xl  mt-12 mb-6">{insight.content.benefits.title}</h2>
             <div className="space-y-4">
               {insight.content.benefits.items.map((benefit, idx) => (
                 <p key={idx}>{benefit}</p>

@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Calendar } from "lucide-react"
+import { Calendar, ArrowRight, ShieldCheck, Clock, Compass } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
@@ -9,64 +9,78 @@ export default function CTASection() {
   const pathname = usePathname()
   
   // Don't show CTA on contact and career pages
-  if (pathname === "/contact" || pathname === "/career" || pathname === "/") {
+  if (pathname === "/contact" || pathname === "/career") {
     return null
   }
 
   return (
-    <section className="py-24 md:py-32 relative overflow-hidden">
-      {/* Simple gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-secondary/10" />
-      
-      {/* Subtle mesh gradient */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[100px]" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-[100px]" />
-      </div>
-
-      <div className="container relative z-10 max-w-5xl">
-        <div className="max-w-3xl mx-auto text-center space-y-8">
-          <div className="space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-              Ready to Drive{" "}
-              <span className="relative inline-block">
-                <span className="relative z-10 gradient-text">Real Impact</span>
-                <span className="absolute inset-x-0 bottom-0 h-3 bg-primary/10 -skew-x-12 transform" />
-              </span>
-              ?
-            </h2>
-            <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              Schedule a free 30-minute intro call. Let's discuss your challenges and explore how our proven strategies can help achieve your goals.
-            </p>
-          </div>
-
-          <div className="space-y-6">
-            <div className="flex flex-wrap justify-center gap-6 text-base text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-primary/50" />
-                <span>No Commitment Required</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-primary/50" />
-                <span>Personalized Discussion</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-primary/50" />
-                <span>Clear Next Steps</span>
-              </div>
+    <section className="py-24 bg-white border-t">
+      <div className="container max-w-6xl">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="space-y-8">
+            <div className="space-y-4">
+              <div className="text-xs  text-primary uppercase tracking-[0.2em]">Next Steps</div>
+              <h2 className="text-4xl md:text-5xl  tracking-tight text-slate-900">
+                Ready to Drive <br/>Real Impact?
+              </h2>
+              <p className="text-xl text-slate-600 leading-relaxed max-w-lg ">
+                Schedule a complimentary 30-minute introductory call to discuss your organizational challenges and explore tailored strategic solutions.
+              </p>
             </div>
 
-            <div className="flex justify-center">
-              <Button 
-                size="lg" 
-                className="min-w-[280px] h-12 text-base" 
-                asChild
-              >
-                <Link href="/contact?type=intro">
-                  Book Free 30 Minutes Call
-                  <Calendar className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
+            <div className="grid sm:grid-cols-2 gap-6">
+              <div className="flex items-start gap-3">
+                <div className="mt-1 w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <ShieldCheck className="w-3 h-3 text-primary" />
+                </div>
+                <div>
+                  <p className="text-sm  text-slate-900 uppercase tracking-wide">No Commitment</p>
+                  <p className="text-xs text-slate-500">Purely exploratory discussion</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="mt-1 w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <Clock className="w-3 h-3 text-primary" />
+                </div>
+                <div>
+                  <p className="text-sm  text-slate-900 uppercase tracking-wide">Personalized</p>
+                  <p className="text-xs text-slate-500">Tailored to your sector</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="mt-1 w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <Compass className="w-3 h-3 text-primary" />
+                </div>
+                <div>
+                  <p className="text-sm  text-slate-900 uppercase tracking-wide">Clear Path</p>
+                  <p className="text-xs text-slate-500">Actionable next steps defined</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-slate-900 rounded-3xl p-10 md:p-12 text-white relative overflow-hidden shadow-2xl">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-[80px] -mr-32 -mt-32" />
+            <div className="relative z-10 space-y-8">
+              <h3 className="text-2xl ">Schedule Your Consultation</h3>
+              <p className="text-slate-300">
+                Choose a time that works for you. Our consultants are ready to help you navigate your next transformation.
+              </p>
+              <div className="space-y-4">
+                <Button 
+                  size="lg" 
+                  className="w-full h-14 text-base  bg-primary hover:bg-primary/90 text-white rounded-xl" 
+                  asChild
+                >
+                  <Link href="/contact?type=intro">
+                    Book 30-Minute Intro Call
+                    <Calendar className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+                <p className="text-center text-xs text-slate-500">
+                  Available for Senior Management & Stakeholders
+                </p>
+              </div>
             </div>
           </div>
         </div>

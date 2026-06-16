@@ -7,8 +7,8 @@ export default function NotFound() {
     <div className="min-h-[80vh] flex items-center justify-center">
       <div className="container">
         <div className="max-w-2xl mx-auto text-center">
-          <h1 className="text-8xl font-bold text-primary mb-4">404</h1>
-          <h2 className="text-3xl font-semibold mb-4">Page Not Found</h2>
+          <h1 className="text-8xl  text-primary mb-4">404</h1>
+          <h2 className="text-3xl  mb-4">Page Not Found</h2>
           <p className="text-xl text-muted-foreground mb-8">
             We couldn't find the page you're looking for. The page might have been removed,
             renamed, or is temporarily unavailable.

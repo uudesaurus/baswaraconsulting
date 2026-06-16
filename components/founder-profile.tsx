@@ -15,7 +15,7 @@ export function FounderProfile() {
             </div>
           </div>
           <div className="w-full md:w-2/3">
-            <h3 className="text-2xl font-heading font-semibold mb-2">Arief Sudrajat</h3>
+            <h3 className="text-2xl font-heading  mb-2">Arief Sudrajat</h3>
             <p className="text-lg text-muted-foreground mb-4">Founder & Managing Director</p>
             <div className="prose prose-blue">
               <p className="text-muted-foreground">
