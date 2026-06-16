@@ -71,8 +71,8 @@ As a Consulting Analyst, you will be a core member of our consulting team, worki
       applicationDetails: {
         email: "office@baswaraconsulting.com",
         subject: "[Baswara Consulting – Consulting Analyst – Your Full Name]",
-        deadline: "16 September 2025, 5:00 PM WIB",
-        note: "Only shortlisted candidates will be contacted to proceed to the next stage"
+        deadline: "Rolling Application (Always Open)",
+        note: "This is a continuous talent pool. We review applications on a rolling basis and will contact shortlisted candidates as specific project needs arise."
       }
     },
     slug: "consulting-analyst",
