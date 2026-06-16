@@ -45,9 +45,9 @@ export default function Navbar() {
       )}
     >
       <div className="container flex items-center justify-between">
-        <Link href="/" className="flex items-center space-x-3">
-          <Image src="/logo.svg" alt="Baswara Consulting Logo" width={40} height={40} priority className="h-8 w-auto" />
-          <span className="text-xl font-light text-slate-900 tracking-tight">Baswara Consulting</span>
+        <Link href="/" className="flex items-center space-x-2 sm:space-x-3">
+          <Image src="/logo.svg" alt="Baswara Consulting Logo" width={40} height={40} priority className="h-7 w-auto sm:h-8" />
+          <span className="text-lg sm:text-xl font-light text-slate-900 tracking-tight">Baswara Consulting</span>
         </Link>
 
         {/* Desktop Navigation */}

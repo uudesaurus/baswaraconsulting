@@ -54,8 +54,8 @@ export default async function IndustryPage(props: { params: Promise<{ slug: stri
             <div className="inline-block px-4 py-1 bg-primary/5 border border-primary/10 text-primary text-xs  uppercase tracking-[0.2em] rounded-full mb-8">
               Sector Overview — {industry.cluster}
             </div>
-            <h1 className="text-5xl md:text-7xl  mb-8 text-slate-900 tracking-tight">{industry.name}</h1>
-            <p className="text-xl md:text-2xl text-slate-600 mb-10 leading-relaxed  max-w-3xl">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl mb-6 md:mb-8 text-slate-900 tracking-tight">{industry.name}</h1>
+            <p className="text-lg sm:text-xl md:text-2xl text-slate-600 mb-8 md:mb-10 leading-relaxed max-w-3xl">
               {industry.hook}
             </p>
             <div className="flex flex-wrap gap-3 mb-12">

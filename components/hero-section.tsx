@@ -2,6 +2,9 @@
 
 import { useEffect, useRef } from "react"
 import ClientMarquee from "@/components/client-marquee"
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
+import { ArrowRight } from "lucide-react"
 
 export default function HeroSection() {
   const heroRef = useRef<HTMLDivElement>(null)
@@ -28,11 +31,11 @@ export default function HeroSection() {
   }, [])
 
   return (
-    <section ref={heroRef} className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
+    <section ref={heroRef} className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden bg-white">
       {/* Background elements */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/20 rounded-full blur-[100px]" />
-        <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-accent/20 rounded-full blur-[100px]" />
+        <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/10 rounded-full blur-[100px]" />
+        <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-accent/10 rounded-full blur-[100px]" />
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] border border-accent/20 rounded-full parallax"
           data-speed="0.5"
@@ -41,32 +44,43 @@ export default function HeroSection() {
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] border border-primary/20 rounded-full parallax"
           data-speed="0.3"
         />
-        <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-accent/10 rounded-full parallax"
-          data-speed="0.1"
-        />
       </div>
 
       <div className="container relative z-10">
-        <div className="max-w-3xl mx-auto text-center space-y-8">
-          <div className="inline-block px-4 py-1.5 bg-accent/10 rounded-full mb-6 animate-fade-up [animation-delay:200ms] opacity-0">
-            <span className="text-sm  text-accent">Transforming Industries & Systems</span>
+        <div className="max-w-4xl mx-auto text-center space-y-8 md:space-y-10">
+          <div className="space-y-4">
+            <div className="inline-block px-4 py-1.5 bg-primary/5 border border-primary/10 rounded-full animate-fade-up [animation-delay:200ms] opacity-0">
+              <span className="text-xs sm:text-sm text-primary uppercase tracking-[0.2em]">Strategic Excellence. Global Impact.</span>
+            </div>
+
+            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl tracking-tight text-slate-900 leading-[1.1] md:leading-[0.95] animate-fade-up [animation-delay:300ms] opacity-0">
+              Multisectoral <span className="text-primary">Insight.</span> <br />
+              <span className="text-slate-400">Proven Execution.</span>
+            </h1>
           </div>
 
-          <h1 className="animate-fade-up [animation-delay:300ms] opacity-0">
-            <span className="gradient-text">Multisectoral Insight.</span> <br/>
-            Global Execution.
-          </h1>
-
-          <p className="text-xl text-muted-foreground animate-fade-up [animation-delay:400ms] opacity-0">
-            Baswara Consulting brings 26+ years of experience across global industry and national health reform into
-            integrated, actionable strategy.
+          <p className="text-lg sm:text-xl md:text-2xl text-slate-600 max-w-2xl mx-auto leading-relaxed animate-fade-up [animation-delay:400ms] opacity-0 px-4">
+            Baswara Consulting bridges the gap between high-level strategy and operational reality. We deliver data-driven results for Indonesia's most critical industries.
           </p>
 
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 pt-4 animate-fade-up [animation-delay:500ms] opacity-0 px-4">
+            <Button size="lg" className="w-full sm:w-auto rounded-full px-8 h-14 text-base" asChild>
+              <Link href="/contact">
+                Work with Us <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+            <Button size="lg" variant="outline" className="w-full sm:w-auto rounded-full px-8 h-14 text-base" asChild>
+              <Link href="/capabilities">
+                Our Capabilities
+              </Link>
+            </Button>
+          </div>
         </div>
 
-        <div className="mt-20 animate-fade-up [animation-delay:600ms] opacity-0">
-          <p className="text-center text-sm text-muted-foreground mb-6">Trusted by leading organizations worldwide</p>
+        <div className="mt-16 md:mt-20 animate-fade-up [animation-delay:700ms] opacity-0">
+          <p className="text-center text-[10px] sm:text-xs text-slate-400 uppercase tracking-[0.2em] mb-6 sm:mb-8 px-4">
+            Trusted by leading organizations worldwide
+          </p>
           <ClientMarquee />
         </div>
       </div>

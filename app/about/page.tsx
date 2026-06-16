@@ -19,10 +19,10 @@ export default function AboutPage() {
             <div className="inline-block px-4 py-1 bg-white/20 backdrop-blur-sm text-white text-sm  rounded-full mb-6">
               Who We Are
             </div>
-            <h1 className="text-4xl md:text-6xl  mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl mb-6 tracking-tight">
               Bridging Strategy <br/>and <span className="text-slate-300">Execution.</span>
             </h1>
-            <p className="text-xl md:text-2xl opacity-90 leading-relaxed max-w-2xl">
+            <p className="text-lg sm:text-xl md:text-2xl opacity-90 leading-relaxed max-w-2xl">
               Baswara Consulting combines hands-on operational excellence with high-level strategic advisory to deliver measurable transformation for Indonesia's most critical systems.
             </p>
           </div>

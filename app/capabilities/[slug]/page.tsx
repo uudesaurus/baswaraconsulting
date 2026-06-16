@@ -58,8 +58,8 @@ export default async function CapabilityPage(props: { params: Promise<{ slug: st
             <div className="inline-block px-4 py-1 bg-primary/5 border border-primary/10 text-primary text-xs  uppercase tracking-[0.2em] rounded-full mb-8">
               Functional Capability
             </div>
-            <h1 className="text-5xl md:text-7xl  mb-8 text-slate-900 tracking-tight">{capability.name}</h1>
-            <p className="text-xl md:text-2xl text-slate-600 mb-6 leading-relaxed  max-w-3xl">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl mb-6 md:mb-8 text-slate-900 tracking-tight">{capability.name}</h1>
+            <p className="text-lg sm:text-xl md:text-2xl text-slate-600 mb-6 leading-relaxed max-w-3xl">
               {capability.headline}
             </p>
             <p className="text-lg text-slate-500 italic mb-10 border-l-4 border-primary/20 pl-6">

@@ -29,10 +29,10 @@ export default function IndustriesPage(){
             <div className="inline-block px-4 py-1 bg-primary/5 border border-primary/10 text-primary text-xs  uppercase tracking-[0.2em] rounded-full mb-8">
               Sector Expertise
             </div>
-            <h1 className="text-5xl md:text-7xl  mb-8 text-slate-900 tracking-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 md:mb-8 text-slate-900 tracking-tight">
               Industries We Serve
             </h1>
-            <p className="text-xl md:text-2xl text-slate-600 mb-12 leading-relaxed  max-w-3xl">
+            <p className="text-lg sm:text-xl md:text-2xl text-slate-600 mb-10 md:mb-12 leading-relaxed font-medium max-w-3xl">
               Deep expertise across Indonesia's most critical sectors. We understand the unique 
               regulatory landscape, competitive dynamics, and operational challenges of each industry.
             </p>
