@@ -135,7 +135,7 @@ export default function UnitsPage() {
                 <div className="text-4xl  text-primary mb-4">01</div>
                 <h3 className="text-lg  mb-2">Strategic + Technical</h3>
                 <p className="text-sm text-muted-foreground">
-                  We combine McKinsey-style strategy with hands-on engineering capability
+                  We combine top-tier strategy with hands-on engineering capability
                 </p>
               </div>
               <div className="bg-white p-6 rounded-xl border">

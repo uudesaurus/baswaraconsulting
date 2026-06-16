@@ -24,7 +24,7 @@ export default function CapabilitiesPage(){
               Our Capabilities
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-slate-600 mb-10 md:mb-12 leading-relaxed font-medium max-w-3xl">
-              Seven core capabilities that combine McKinsey-style strategic thinking with 
+              Seven core capabilities that combine top-tier strategic thinking with 
               hands-on execution. We deliver data-driven results through deep local expertise.
             </p>
             <div className="flex flex-wrap gap-6">
